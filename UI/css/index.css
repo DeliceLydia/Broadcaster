@@ -1,0 +1,155 @@
+body {
+    background-image: url(../assets/corruption2.jpg);
+   background-repeat: no-repeat;
+   background-size: 100%;
+   padding: 0;
+   margin: 0;
+   width: 100%;
+}
+.logo{
+    position: relative;
+    margin-top: 1%;
+    padding-left: 10px;
+    font-size: 170%;
+    padding-bottom: 5px;
+}
+.logo a{
+    float: left;
+    font-size: 150%;
+    text-decoration: none;
+    color:black;
+}
+.logo a span{
+    font-size: 180%;
+    color: rgb(98, 182, 105);
+}
+.home-buttons{
+    padding-right: 3px;
+    list-style: none;
+    margin-top: -20px;
+    float: right;
+}
+.home-buttons li{
+    display: inline-block;
+    margin-top: 7%;
+}
+.home-buttons li a{
+    color: black;
+    text-decoration: none;
+    margin-top: 0;
+    margin-right: 3%;
+    padding: 5px 20px;
+    font-family: "Roboto", sans-serif;   
+    font-size: 25px;
+}
+.home-buttons li a:hover{
+    color: rgb(11, 180, 11);
+    font-size: 100%;
+}
+#body{
+    margin: 30px;
+    height: 235px;
+}
+
+.welcome {
+    padding-top: 2%;
+    color: black;
+    font-size: 200%;
+    margin: 4%;
+}
+.welcome p{
+    color: black;
+    width: 50%;
+    margin-top: 2%; 
+    float: right;
+}
+
+.welcome h1{
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 10px;
+    font-size: 200%;
+    text-align: center;
+    color: rgb(98, 182, 105);
+}
+.welcome p a{
+    padding: 1%;
+    background-color: rgb(223, 215, 215);
+    color: black;
+    text-transform: uppercase;
+    font-size: 60%;
+    letter-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    float: right;
+    margin-top: 20%;
+    
+}
+.welcome a:hover{
+    color: white;
+    background-color: rgb(2, 42, 2);
+}
+/* signup */
+.signup {
+    margin: 150px auto ;
+    width: 400px;
+    padding: 30px 25px;
+    padding-left: 41px;
+    background: rgb(230, 226, 226);
+    border: 1px solid #c4c4c4;
+}
+.signup-input {
+    width: 360px;
+    height: 50px;
+    margin-bottom: 25px;
+    padding-left:10px;
+    font-size: 17px;
+    font-family: serif;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.signup-button {
+    width: 93%;
+    height: 50px;
+    padding: 0;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    background: rgb(98, 182, 105);
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    outline:0;
+}
+/* signin */
+.login {
+    margin: 170px auto; 
+    width: 450px; 
+    padding: 100px 30px;
+    background: rgb(230, 226, 226);
+    border: 1px solid #c4c4c4;
+} 
+.login-input {
+    width: 440px;
+    height: 50px;
+    margin-bottom: 25px;
+    padding-left:10px;
+    font-size: 15px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.login-button {
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    background: rgb(98, 182, 105);
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    outline:0;
+}
