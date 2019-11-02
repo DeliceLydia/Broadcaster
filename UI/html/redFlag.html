@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Broadcaster">
+    <meta name="keywords" content="Broadcaster">
+    <meta name="author" content="Delice Lydia">
+    <title>Broadcaster | homepage</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body class="body">
+    <nav role="navigation">
+        <div class="logo">
+            <a href="index.html">Broad<span>caster</span></a>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li><a href="">intervention</a></li>
+                <li><a href="">all redFlags</a></li>
+                <li><a href="../html/redFlag.html">Sign Out</a></li>
+            </ul>
+    </nav>
+    </div>
+    <section>
+        <div id="container" class="container" style="width: 50%; position: absolute; left: 300px; top: 100px;">
+            <form class="right_side">
+                <h1>RED FLAG RECORDS</h1>
+                <div class="single_image">
+                    <div class="row">
+                        <div class="title">
+                            <label>createdOn</label>
+                        </div>
+                        <div class="placeholder">
+                            <input type="date" class="date" placeholder="createdOn">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="title">
+                            <label>title</label>
+                        </div>
+                        <div class="placeholder">
+                            <input type="text" placeholder="title">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="title">
+                            <label>type</label>
+                        </div>
+                        <div class="placeholder">
+                            <select id="status">
+                                <option value="new">red flag</option>
+                                <option value="use">intervention record</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="title">
+                            <label>location</label>
+                        </div>
+                        <div class="placeholder">
+                            <input type="text" placeholder="location">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="title">
+                            <label>status</label>
+                        </div>
+                        <div class="placeholder">
+                            <select id="status">
+                                <option value="new">under investigation</option>
+                                <option value="use">resolved</option>
+                                <option value="use">rejected</option>
+                                <option value="use">draft</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="placeholder">
+                        <form>
+                            Upload image: <input type="file" multiple><br><br>
+                            Upload video: <input type="file" multiple><br><br>
+                        </form>
+                    </div>
+                    <textarea id="txt-msg" class="form-input" name="message" rows="5" placeholder="comment"></textarea>
+                    <input type="submit" name="submit" class="submit" value="Post" />
+            </form>
+        </div>
+      </div>
+    </section>
+</body>
+
+</html>

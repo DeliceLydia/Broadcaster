@@ -8,19 +8,19 @@ body {
 }
 .logo{
     position: relative;
-    margin-top: 1%;
     padding-left: 10px;
-    font-size: 170%;
-    padding-bottom: 5px;
+    font-size: 150%;
+    padding-bottom: 7px;
+    /* margin-top: 1%; */
 }
 .logo a{
     float: left;
-    font-size: 150%;
+    font-size: 120%;
     text-decoration: none;
     color:black;
 }
 .logo a span{
-    font-size: 180%;
+    font-size: 170%;
     color: rgb(98, 182, 105);
 }
 .home-buttons{
@@ -69,7 +69,7 @@ body {
     letter-spacing: 10px;
     font-size: 200%;
     text-align: center;
-    color: rgb(98, 182, 105);
+    color: black;
 }
 .welcome p a{
     padding: 1%;
@@ -93,8 +93,8 @@ body {
 .signup {
     margin: 150px auto ;
     width: 400px;
-    padding: 30px 25px;
-    padding-left: 41px;
+    padding: 30px 30px;
+    padding-left: 39px;
     background: rgb(230, 226, 226);
     border: 1px solid #c4c4c4;
 }
@@ -109,8 +109,19 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-.signup-button {
-    width: 93%;
+.password{
+    width: 390px;
+    height: 50px;
+    margin-bottom: 25px;
+    padding-left:10px;
+    font-size: 17px;
+    font-family: serif;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;  
+}
+input[type=submit].signup-button {
+    width: 100%;
     height: 50px;
     padding: 0;
     font-size: 20px;
@@ -140,7 +151,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-.login-button {
+input[type=submit].login-button {
     width: 100%;
     height: 50px;
     padding: 0;
@@ -153,3 +164,117 @@ body {
     cursor: pointer;
     outline:0;
 }
+/* red flag */
+  nav {
+    width: 100%;
+    background: rgb(161, 184, 230);
+    height: 80px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+nav a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color: #000000;
+    font-size: 0.6em; 
+    float: right;
+    padding: 0px; 
+}
+  .sidebar ul li{
+    display: inline;
+    color: aliceblue;
+    font-size: 20px;
+   }
+   .sidebar ul li a{
+     color:rgb(8, 8, 8);
+     font-size: 25px;
+     cursor: pointer;
+     text-decoration: none;
+     margin-left: 20px;
+     margin-right: 20px;
+     float: right;
+   }
+   section h1{
+    background: rgb(98, 182, 105);
+    padding: 20px 0;
+    font-size: 140%;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+}
+   input[type=text], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgb(116, 92, 92);
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+  input[type=submit] {
+    background-color: #4CAF50;
+    width: 20%;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+  } 
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    
+  } 
+#container{
+    margin-top: 3%;
+    margin-left: 110px;
+    width: 150%;
+  }
+  #container .container{
+    position: absolute;
+    right: 0;
+    left: 2px;
+    width: 130%;
+  }
+  .placeholder{
+    float: left;
+    width: 40%;
+    margin-top: 6px;
+  }
+  .placeholder #status {
+    height: 40px;;
+  }
+  .placeholder .date {
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgb(116, 92, 92);
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  .form-input {
+    width: 50%;
+  }
+  .row {
+    display: flex;
+    clear: both;
+  }
+  .row .title {
+    max-width: 5vw;
+  }
+.title {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+.title {
+    float: none;
+    width: 100%;
+    margin: none;
+    padding: none;
+  }
+  
