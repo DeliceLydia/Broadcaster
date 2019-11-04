@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+
+body {
+   background-repeat: no-repeat;
+   background-size: 100%;
+   padding: 0;
+   margin: 0 0 100px 0;
+   width: 100%;
+   font-family: 'Varela Round', sans-serif;
+   min-height: 100vh;
+}
+
+.button {
+    background-color: rgb(11, 180, 11);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px;
+}
+
+@media(min-width: 320px){
+  #header {
+      height: 100px;
+      padding: 10px;
+      background-color: #127210;
+  }
+
+  .logo {
+    margin-top: 5px;
+  }
+
+  .logo a {
+      text-decoration: none;
+      color: #000000;
+      text-transform: uppercase;
+      letter-spacing: .5ch;
+  }
+
+  .logo span {
+      color: #ff7c0a;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-items {
+    width: 100%;
+    align-items: center;
+  }
+  .nav-items ul {
+      list-style: none;
+      padding: 0px;
+  }
+  .nav-items ul li {
+    display: flex;
+    justify-content: center;
+  }
+  .nav-items ul li a{
+      margin: 2px;
+      padding: 5px;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: .2ch;
+      text-transform: uppercase;
+  }
+  .background-image {
+    background-image: url(../assets/cuffs.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .main {
+      display: flex;
+      flex-direction: column;
+      overflow: scroll;
+  }
+  .center-items {
+      display: flex;
+      justify-content: center;
+  }
+  .content {
+      padding: 0px;
+  }
+  .heading-text {
+    font-weight: 900;
+    font-size: 25px;
+    display: flex;
+
+    justify-content: center;
+  }
+
+  .welcome {
+      color: #ffffff;
+      padding: 15PX;
+  }
+
+  .welcome p {
+      font-size: 20px;
+  }
+
+  .tiles {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+  }
+
+  .single-tile {
+    width: 100%;
+  }
+
+  .tile-title {
+    background-color: #127210;
+    margin: 5px 0px;
+    padding: 5px 2px;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+  }
+ 
+  .single-tile img {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .section-header {
+    background-color: #ffffff;
+  }
+
+  .section-header h1{
+    color: #000000;
+    font-size: medium;
+  }
+  .footer {
+    background-color: #127210; 
+    height: 100px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    bottom: 0px;
+    width: 100%;
+    position: fixed;
+  }
+  
+}
+
+
+@media (min-width: 768px){
+    #header {
+        height: 50px;
+    }
+    .nav {
+        flex-direction: row;
+      }
+    
+      .nav-items {
+        width: 100%;
+        align-items: center;
+      }
+
+      .nav-items ul {
+          display: flex;
+          flex-direction: row;
+          width: 50%;
+          float: right;
+          justify-content: flex-end;
+
+      }
+      .nav-items ul li {
+       margin: 0 5px 0 5px;
+      }
+      .nav-items ul li a:hover{
+        border-bottom: 1px solid #ff7c0a;
+       }
+      .welcome {
+        padding: 10px;
+          height: 30vh;
+      }
+      .tiles {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+
+      .single-tile {
+        width: 30%;
+      }
+    
+      .tile-title {
+        background-color: #127210;
+        margin: 5px 0px;
+        padding: 5px 2px;
+        display: flex;
+        justify-content: center;
+        color: #ffffff;
+      }
+
+      .tile-title span {
+        font-size: 12px;
+      }
+}
+
+@media (min-width: 1024px) {
+  .tile-title span {
+    font-size: 20px;
+  }
+  .single-tile {
+    width: 25%;
+    margin: 5px;
+    justify-self: left;
+  }
+}

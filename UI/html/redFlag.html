@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Broadcaster">
+    <meta name="keywords" content="Broadcaster">
+    <meta name="author" content="Delice Lydia">
+    <title>Broadcaster | homepage</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body class="body">
+    <nav role="navigation">
+        <div class="logo">
+            <a href="index.html">Broad<span>caster</span></a>
+        </div>
+        <div class="nav-items">
+            <ul>
+                <li><a href="intervention.html">AllIntervention</a></li>
+                <li><a href="AllRedFlag.html">redFlags</a></li>
+                <li><a href="../html/signin.html">Sign Out</a></li>
+            </ul>
+    </div>
+    </nav>
+    <section>
+        <div id="container" class="container" style="width: 30%; position: absolute; left: 600px; top: 100px;">
+            <form class="right_side">
+                <h1>INCIDENT ENTITY!!</h1>
+                <div class="single_image">
+                    <div class="row">
+                        <div class="title">
+                            <label>CreatedOn</label>
+                        </div>
+                        <div class="placeholder">
+                            <input type="date" class="date" placeholder="createdOn">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="title">
+                            <label>Title</label>
+                        </div>
+                        <div class="placeholder">
+                            <input type="text" placeholder="title">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="title">
+                            <label>Type</label>
+                        </div>
+                        <div class="placeholder">
+                            <select id="status">
+                                <option value="new">red flag</option>
+                                <option value="use">intervention record</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="title">
+                            <label>Location</label>
+                        </div>
+                        <div class="placeholder">
+                            <input type="text" placeholder="location">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="title">
+                            <label>Status</label>
+                        </div>
+                        <div class="placeholder">
+                            <select id="status">
+                                <option value="new">under investigation</option>
+                                <option value="use">resolved</option>
+                                <option value="use">rejected</option>
+                                <option value="use">draft</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="title">
+                                <label>Comment</label>
+                            </div>
+                            <div class="placeholder">
+                                <input type="text" placeholder="comment">
+                            </div>
+                        </div>
+                    <div class="placeholder">
+                        <form>
+                            Upload image: <input type="file" multiple><br><br>
+                            Upload video: <input type="file" multiple><br><br>
+                        </form>
+                    </div>
+                    <input type="submit" name="submit" class="submit" value="Report" />
+            </form>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+            <span>Broadcaster &copy;2019, All rights reserved by Andela</span></p>
+        </footer>
+</body>
+
+</html>
