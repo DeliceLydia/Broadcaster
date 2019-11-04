@@ -15,22 +15,22 @@
         <div class="logo">
             <a href="index.html">Broad<span>caster</span></a>
         </div>
-        <div class="sidebar">
+        <div class="nav-items">
             <ul>
-                <li><a href="">intervention</a></li>
-                <li><a href="">all redFlags</a></li>
-                <li><a href="../html/redFlag.html">Sign Out</a></li>
+                <li><a href="intervention.html">AllIntervention</a></li>
+                <li><a href="AllRedFlag.html">redFlags</a></li>
+                <li><a href="../html/signin.html">Sign Out</a></li>
             </ul>
-    </nav>
     </div>
+    </nav>
     <section>
-        <div id="container" class="container" style="width: 50%; position: absolute; left: 300px; top: 100px;">
+        <div id="container" class="container" style="width: 30%; position: absolute; left: 600px; top: 100px;">
             <form class="right_side">
-                <h1>RED FLAG RECORDS</h1>
+                <h1>INCIDENT ENTITY!!</h1>
                 <div class="single_image">
                     <div class="row">
                         <div class="title">
-                            <label>createdOn</label>
+                            <label>CreatedOn</label>
                         </div>
                         <div class="placeholder">
                             <input type="date" class="date" placeholder="createdOn">
@@ -38,7 +38,7 @@
                     </div>
                     <div class="row">
                         <div class="title">
-                            <label>title</label>
+                            <label>Title</label>
                         </div>
                         <div class="placeholder">
                             <input type="text" placeholder="title">
@@ -46,7 +46,7 @@
                     </div>
                     <div class="row">
                         <div class="title">
-                            <label>type</label>
+                            <label>Type</label>
                         </div>
                         <div class="placeholder">
                             <select id="status">
@@ -57,7 +57,7 @@
                     </div>
                     <div class="row">
                         <div class="title">
-                            <label>location</label>
+                            <label>Location</label>
                         </div>
                         <div class="placeholder">
                             <input type="text" placeholder="location">
@@ -65,7 +65,7 @@
                     </div>
                     <div class="row">
                         <div class="title">
-                            <label>status</label>
+                            <label>Status</label>
                         </div>
                         <div class="placeholder">
                             <select id="status">
@@ -76,18 +76,28 @@
                             </select>
                         </div>
                     </div>
+                    <div class="row">
+                            <div class="title">
+                                <label>Comment</label>
+                            </div>
+                            <div class="placeholder">
+                                <input type="text" placeholder="comment">
+                            </div>
+                        </div>
                     <div class="placeholder">
                         <form>
                             Upload image: <input type="file" multiple><br><br>
                             Upload video: <input type="file" multiple><br><br>
                         </form>
                     </div>
-                    <textarea id="txt-msg" class="form-input" name="message" rows="5" placeholder="comment"></textarea>
-                    <input type="submit" name="submit" class="submit" value="Post" />
+                    <input type="submit" name="submit" class="submit" value="Report" />
             </form>
         </div>
       </div>
     </section>
+    <footer class="footer">
+            <span>Broadcaster &copy;2019, All rights reserved by Andela</span></p>
+        </footer>
 </body>
 
 </html>
