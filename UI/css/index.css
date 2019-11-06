@@ -7,10 +7,15 @@ body {
   font-family: 'Varela Round', sans-serif;
   min-height: 100vh;
 }
+#header {
+  height: 70px;
+  padding: 10px;
+  background-color: #fff;
+}
 
 .logo{
     position: relative;
-    padding-left: 10px;
+    padding-left: 12px;
     font-size: 150%;
     padding-bottom: 7px;
 }
@@ -21,8 +26,8 @@ body {
     color:black;
 }
 .logo a span{
-    font-size: 170%;
-    color: #ff7c0a;
+    font-size: 150%;
+    color: #7451eb;
 }
 /* signup */
 .nav-items {
@@ -51,7 +56,7 @@ body {
   font-size: 17px
 }
 .nav-items ul li a:hover{
-  border-bottom: 1px solid #ff7c0a;
+  border-bottom: 1px solid #7451eb;
  }
 .signup {
     margin: 100px auto;
@@ -84,7 +89,7 @@ body {
     margin-top: 1px;
   }
   .signup-lost a {
-    color: #ff8700;
+    color: #7451eb;
     font-weight: bold;
     text-decoration: none;
     border: none;
@@ -117,7 +122,8 @@ input[type=submit].signup-button {
     width: 170px;
     text-align: center;
     text-transform: uppercase;
-    background-color: #ff7c0a;
+    color: #fff;
+    background-color: #7451eb;
 
 }
 /* signin */
@@ -163,7 +169,8 @@ input[type=submit].login-button {
   width: 170px;
   text-align: center;
   text-transform: uppercase;
-  background-color: #ff7c0a;
+  color: #fff;
+  background-color: #7451eb;
 }
 /* red flag */
 nav a {
@@ -233,7 +240,8 @@ nav a {
     width: 170px;
     text-align: center;
     text-transform: uppercase;
-    background-color: #ff7c0a;
+    color : #fff;
+    background-color: #7451eb;
   } 
   .placeholder{
     float: left;
@@ -272,8 +280,9 @@ nav a {
     padding: none;
   }
   .footer {
-    height: 60px;
-    color: black;
+    background-color: #7451eb; 
+    height: 100px;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -284,42 +293,50 @@ nav a {
   }
   /* allRedFlags */
   .wrapper {
-    font-family: 'Varela Round', sans-serif;
-    display: flex;
-    border: rgb(221, 220, 220) solid thin;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: inline-flex;
+    border: rgb(221, 220, 220) solid ;
     color: black;
-    width: 65%;
+    width: 45%;
     font: bold;
     padding: 10px;
-    margin-bottom: 10px;
-    margin-left: 15%;
+    margin-bottom: 20px;
+    margin-left: 2%;
     position: inherit;
-    margin-top: 90px;
+    margin-top: 80px;
 }
 
 .wrapper:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
-.col1 {
-    width: 50%;
+.col1-wrapper {
+  width: 50%;
 }
-
-.col1 img {
-    width: 100%;
-    height: 300px;
-    height: 90%;
+.col1-wrapper img {
+  width: 100%;
+  height: 300px;
+  height: 90%;
 }
-
-.col2 {
-    display: block;
-    float: left;
-    margin-left: 60px;
+.col1-wrapper1 img {
+  width: 400px;
+  height: 300px;
+  height: 90%;
 }
-.col2 h2 {
-  padding: 20px 0;
-  padding-left: 8px;
-  font-weight: 900;
-  color: #000000;
+.col2-wrapper1 {
+  display: block;
+  float: left;
+  margin-left: 20px;
+}
+.col2-wrapper1 h2 {
+  color: #7451eb;
+}
+.col2-wrapper {
+  display: block;
+  float: left;
+  margin-left: 10px;
+}
+.col2-wrapper h2 {
+  color: #7451eb;
 }
 /* specific flag */
 .flag-details {
@@ -332,21 +349,21 @@ nav a {
   margin-left: 3%;
   width: 50%;
   text-align: left;
-  margin-right: 2%;
+  margin-top: 2%;
+  margin-right: 1%;
 }
 
 .col2-flag div {
-  margin-top: 3%;
-  margin-bottom: 3%;
+  margin-top: 1%;
+  margin-bottom: 5px;
 }
 
 .col2-flag div span {
   margin-left: 1%;
   font-size:  1em;
-  color: #ff7c0a;
+  color: #7451eb;
   
 }
-
 .col2-flag div:first-of-type {
   font-size: 1.4em;
 }
@@ -377,7 +394,8 @@ nav a {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   display: inline-flex;
   border: rgb(221, 220, 220) solid thin;
-  padding: 70px;
+  padding: 30px;
+  padding-right: 10px;
   margin-bottom: 10px;
   margin-left: 2%;
   position: inherit;
@@ -389,25 +407,9 @@ nav a {
 }
 
 .col1-details img {
-  margin-top: 10px;
+  margin-top: 50px;
   width: 100%;
 }
-
-.col2-flag button {
-    margin-left: 5px;
-    margin-top: 70px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.875rem 24px;
-    border: 0;
-    border-radius: 3rem;
-    font-family: Roboto, sans-serif;
-    font-size: 0.875rem;
-    font-weight: 500;
-    width: 150px;
-    text-align: center;
-    text-transform: uppercase;
-    background-color: #ff7c0a;
+.col2-flag h2 {
+  color: #7451eb;
 }
