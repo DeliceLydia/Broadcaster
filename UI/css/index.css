@@ -59,8 +59,8 @@ body {
   border-bottom: 1px solid #7451eb;
  }
 .signup {
-    margin: 100px auto;
-    margin-bottom: 40px;
+    margin: 50px auto;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     width: 20%;
@@ -74,19 +74,16 @@ body {
     max-width: 320px;
     height: 50px;
     margin-bottom: 25px;
-    padding-left: 90%;
+    padding-left: 200px;
     font-size: 17px;
     font-family: serif;
     background: #fff; 
     border: 1px solid #ccc;
     border-radius: 4px;
-    justify-content: flex-end;
-    float: right;
     
    }
   .signup-lost {
-    padding-left: 800px;
-    margin-top: 1px;
+    padding-left: 840px;
   }
   .signup-lost a {
     color: #7451eb;
@@ -400,6 +397,25 @@ nav a {
   margin-left: 2%;
   position: inherit;
   margin-top: 5%;
+}
+input[type=submit].submitt {
+  margin-left: 80px;
+  margin-top: 130px;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center; 
+  align-items: center;
+  padding: 0.875rem 24px;
+  border: 0;
+  border-radius: 3rem;
+  font-family: Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  width: 170px;
+  text-transform: uppercase;
+  color : #fff;
+  background-color: #7451eb;
 }
 
 .col1-details {
