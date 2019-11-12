@@ -27,7 +27,7 @@ class Users {
                     lastname: newUser.lastname,
                     email: newUser.email
                 }
-                const token = jwt.sign(payload, 'SECRET_KEY', { expiresIn: '1d' });
+                const token = jwt.sign(payload, 'SECRET_KEY', { expiresIn: '24hrs' });
                 users.push(newUser);
                 return responseMessage.successWithData(res, 201, 'User created successfully', {token});
     }

@@ -7,9 +7,9 @@ cloudinary.config({
 
 });
 export const imageUploader = (req, res, next) => {
-    cloudinary.v1.uploader.upload(req.body.photo, (error, result) => {
+    cloudinary.v1.uploader.upload(req.body.images, (error, result) => {
       if (result) {
-        req.body.photo = result.secure_url;
+        req.body.images = result.secure_url;
       }
       if (error) {
         return res.status(404).send({
