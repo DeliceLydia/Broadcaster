@@ -18,10 +18,9 @@ const responseMessage = {
             message,
         })
     },
-    successUser(res, message, statusCode, data) {
+    successUser(res, statusCode, data) {
         return res.status(statusCode).json({
             statusCode,
-            message,
             data,
             
         })
