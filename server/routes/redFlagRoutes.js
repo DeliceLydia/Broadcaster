@@ -8,6 +8,7 @@ const redFlag_router = express.Router();
 redFlag_router.post('/api/v1/red-flags', auth, Redflags.postRedFlag);
 redFlag_router.get('/api/v1/red-flags', auth, Redflags.getAll);
 redFlag_router.get('/api/v1/red-flags/:redFlagId', auth, Redflags.getOne);
+redFlag_router.patch('/api/v1/red-flags/:redFlagId/location', auth, Redflags.updateLocation);
 
 
 export default redFlag_router;

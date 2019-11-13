@@ -13,4 +13,12 @@ const validateRedFlag = {
         return joi.validate(redFlag, schema);
     }
 }
-export default validateRedFlag;
+const validateLocation = {
+    validation(newLocation) {
+      const updateLocation = {
+        location: joi.string().required(),
+      };
+      return joi.validate(newLocation, updateLocation);
+    },
+  };
+export {validateRedFlag, validateLocation}

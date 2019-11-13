@@ -1,4 +1,4 @@
-import validateRedFlag from '../validations/redFlagValidation';
+import {validateRedFlag, validateLocation} from '../validations/redFlagValidation';
 import responseMessage from '../helpers/response';
 import moment from 'moment';
 import redFlags from '../models/redFlagModel';
@@ -25,6 +25,23 @@ class RedFlags {
     const redFlagId = redFlags.find(h => h.redFlagId === parseInt(req.params.redFlagId));
     if (!redFlagId) { return responseMessage.errorMessage(res, 404, 'red flag not found')}
     else { return responseMessage.successUser(res, 200, redFlagId); }
+  }
+  
+  static updateLocation(req, res) {
+    const { error } = validateLocation.validation(req.body);
+    if (error) { return responseMessage.errorMessage(res, 400, error.details[0].message); }
+    const check_redFlag = redFlags.find(i => i.redFlagId === parseInt(req.params.redFlagId));
+    
+    if(!check_redFlag) {return responseMessage.errorMessage(res, 404, 'red flag not found')}
+    
+     if(check_redFlag.status !== 'draft') 
+    {return responseMessage.errorMessage(res, 400, 'you are not allowed to change the location')}
+    
+    if(check_redFlag) {
+      check_redFlag.location = req.body.location;
+      return responseMessage.successWithData(res, 200, "updated red-flag record's location ", {redFlagId : check_redFlag.redFlagId})
+
+    } 
   }
 }
 export default RedFlags;
