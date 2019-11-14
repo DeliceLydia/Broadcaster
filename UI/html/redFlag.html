@@ -8,19 +8,18 @@
     <meta name="keywords" content="Broadcaster">
     <meta name="author" content="Delice Lydia">
     <title>Broadcaster | homepage</title>
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/css.css">
 </head>
+
 <body class="body">
-    <nav role="navigation">
-        <div class="logo">
-            <a href="index.html">Broad<span>caster</span></a>
-        </div>
+    <nav role="navigationBar">
+        <a href="index.html"><div class="logo"><img src="../assets/logo.png" alt=""></div></a>
         <div class="nav-items">
             <ul>
                 <li><a href="AllRedFlag.html">redFlags/Interventions</a></li>
                 <li><a href="signin.html">Sign Out</a></li>
             </ul>
-    </div>
+        </div>
     </nav>
     <section>
         <div id="container" class="container" style="width: 30%; position: absolute; left: 600px; top: 100px;">
@@ -76,27 +75,37 @@
                         </div>
                     </div>
                     <div class="row">
-                            <div class="title">
-                                <label>Comment</label>
-                            </div>
-                            <div class="placeholder">
-                                <input type="text" placeholder="comment" required />
-                            </div>
+                        <div class="title">
+                            <label>Comment</label>
                         </div>
-                    <div class="placeholder">
-                        <form>
-                            Upload image: <input type="file" multiple><br><br>
-                            Upload video: <input type="file" multiple><br><br>
-                        </form>
+                        <div class="placeholder">
+                            <input type="text" placeholder="comment" required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="title">
+                            <label>Upload image</label>
+                        </div>
+                        <div class="placeholder">
+                            <input type="file">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="title">
+                            <label>Upload video</label>
+                        </div>
+                        <div class="placeholder">
+                            <input type="file">
+                        </div>
                     </div>
                     <input type="submit" name="submit" class="submit" value="Report" />
             </form>
         </div>
-      </div>
+        </div>
     </section>
     <footer class="footer">
-            <span>Broadcaster &copy;2019, All rights reserved by Andela</span></p>
-        </footer>
+        <span>Broadcaster &copy;2019, All rights reserved by Andela</span></p>
+    </footer>
 </body>
 
 </html>
