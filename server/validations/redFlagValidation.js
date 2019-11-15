@@ -21,4 +21,12 @@ const validateLocation = {
       return joi.validate(newLocation, updateLocation);
     },
   };
-export {validateRedFlag, validateLocation}
+  const validateComment = {
+    validation(newComment) {
+      const updateComment = {
+        comment: joi.string().required(),
+      };
+      return joi.validate(newComment, updateComment);
+    },
+  };
+export {validateRedFlag, validateLocation, validateComment}
