@@ -8,7 +8,7 @@ import responseMessage from '../helpers/response';
 dotenv.config();
 
 class Users {
-    static async signup(req,res) {
+    static signup(req,res) {
             const { error } = validateSignup.validation(req.body);
             if (error) {
                 return responseMessage.errorMessage(res, 400, error.details[0].message);
@@ -31,7 +31,7 @@ class Users {
                 users.push(newUser);
                 return responseMessage.successWithData(res, 201, 'User created successfully', {token});
     }
-    static async signin(req,res) {
+    static signin(req,res) {
         const { error } = validateSignin.validation(req.body);
             if (error) {
                 return responseMessage.errorMessage(res, 400, error.details[0].message);}
