@@ -1,0 +1,518 @@
+/* signup page */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  }
+header {
+    display: flex;
+ }
+ .logo {
+  width: 190px;
+  margin-top: -10%;
+  margin-left: 5%;
+ }
+.nav-items {
+  margin-top: 13%;
+  margin-left: 7%;
+  }
+.nav-items ul li a {
+  text-decoration: none;
+  font-size: 1.3em;
+}
+.nav-items ul li a:hover{
+    background: none;
+    transition-duration: 0.05s;
+    cursor: pointer;
+    background-color: #7451eb;
+}
+.nav-items ul {
+  list-style: none;
+}
+.signup {
+  margin: 20px auto;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 30px 30px;
+  padding-left: 70px;
+  background: #fff;
+  border: 2px solid #c4c4c4;
+  
+}
+.signup-input {
+  max-width: 320px;
+  height: 50px;
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-family: serif;
+  background: #fff; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+ }
+ .password{
+  max-width: 340px;
+  height: 70px;
+  margin-bottom: 25px;
+  padding-left:10px;
+  font-size: 20px;
+  font-family: serif;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;  
+}
+input[type=submit].signup-button {
+  margin-left: 90px;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.875rem 24px;
+  border: 0;
+  border-radius: 3rem;
+  font-family: Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  width: 170px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #7451eb;
+
+}
+.signup-lost {
+ font-size: 1.1em;
+ margin-top: 5px;
+ margin-left: 80px;
+}
+.signup-lost a {
+  color: #7451eb;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  background: none;
+}
+@media only screen and (min-width: 1024px) {
+  .nav-items {
+    margin-top: 2%;
+    width: 100%;
+    align-items: center;
+    
+  }
+  .nav-items ul {
+      display: flex;
+      flex-direction: row;
+      width: 50%;
+      float: right;
+      justify-content: flex-end;
+      list-style: none;
+    }
+  .nav-items ul li {
+   margin: 0 40px 0 5px;
+   }
+  .nav-items ul li a{
+    margin: 2px;
+    padding: 5px;
+    color: #000000;
+    text-decoration: none;
+    letter-spacing: .2ch;
+    font-size: 1.3em;
+  }
+  .signup {
+    margin: 30px auto;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    padding: 30px 30px;
+    padding-left: 70px;
+    background: #fff;
+    border: 2px solid #c4c4c4;
+    
+}
+.password{
+  max-width: 310px;
+  height: 50px;
+  margin-bottom: 25px;
+  padding-left:10px;
+  font-size: 20px;
+  font-family: serif;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;  
+}
+.signup-lost {
+  padding-left: 750px;
+}
+.signup-lost a {
+  color: #7451eb;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  background: none;
+}
+}
+/* signin page */
+.login {
+  margin: 30px auto;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 30px 30px;
+  padding-left: 70px;
+  background: #fff;
+  border: 2px solid #c4c4c4;;
+}
+.login h2 {
+  padding-left: 90px;
+}
+.login-input {
+  max-width: 320px;
+  height: 50px;
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-family: serif;
+  background: #fff; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  float: right;
+} 
+input[type=submit].login-button {
+  margin-left: 90px;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.875rem 24px;
+  border: 0;
+  border-radius: 3rem;
+  font-family: Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  width: 170px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #7451eb;
+}
+@media only screen and (min-width: 1024px) {
+  .login {
+    margin: 150px auto;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    padding: 30px 30px;
+    padding-left: 70px;
+    background: #fff;
+    border: 2px solid #c4c4c4;;
+  } 
+  .login-footer {
+    background-color: #3D444A; 
+    height: 60px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    bottom: 0px;
+    width: 100%;
+    position: absolute;
+  }
+}
+/* redFlags page */
+.container {
+    margin-top: 3px;
+    margin-left: 11px;
+    margin-bottom: 40px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;;
+    padding: 10px 30px;
+    background: #fff;
+    border: 2px solid #c4c4c4;
+  
+} 
+.right_side h1{
+  padding: 20px 0;
+  padding-left: 100px;
+  font-size: 1.3em;
+  color: #000000;
+}
+input[type=text], select {
+  width: 320px;
+  padding: 15px;
+  border: 1px solid rgb(116, 92, 92);
+  border-radius: 4px;
+}
+label {
+  padding: 10px 12px 12px 0px;
+  display: inline-block;
+  font-size: 1.1em;
+}
+.placeholder{
+  width: 40%;
+}
+.placeholder .date {
+  width: 350px;
+  height: 40px;
+  border: 1px solid rgb(116, 92, 92);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.placeholder #status {
+  width: 350px;
+  height: 40px;;
+}
+.row .title {
+  max-width: 6vw;
+}
+input[type=submit].submit {
+  margin-left: 125px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.875rem 24px;
+  border: 0;
+  border-radius: 3rem;
+  font-family:  sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  width: 190px;
+  text-align: center;
+  text-transform: uppercase;
+  color : #fff;
+  background-color: #7451eb;
+}
+@media only screen and (min-width: 1024px) {
+  .container {
+    margin: 10px auto;
+    margin-bottom: 60px;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    padding: 30px 30px;
+    padding-left: 50px;
+    background: #fff;
+    border: 2px solid #c4c4c4;
+    
+  } 
+  input[type=text], select {
+    width: 350px;
+    padding: 12px;
+    border: 1px solid rgb(116, 92, 92);
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+  .right_side h1{
+    padding: 20px 0;
+    padding-left: 160px;
+    font-size: 1.3em;
+    background-color: #7451eb;
+    color: #fff;
+  }
+  label {
+    padding: 20px 12px 12px 0px;
+    display: inline-block;
+  }
+  .placeholder{
+    float: left;
+    width: 40%;
+    margin-top: 13px;
+    margin-left: 10px;
+  }
+  .placeholder #status {
+    height: 40px;;
+  }
+  .placeholder .date {
+    width: 350px;
+    height: 40px;
+    border: 1px solid rgb(116, 92, 92);
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  .form-input {
+    width: 40%;
+  }
+  .row {
+    display: flex;
+    clear: both;
+  }
+  .row .title {
+    max-width: 5vw;
+  }
+  .title {
+    float: left;
+    width: 25%;
+    margin-top: 4px;
+  }
+}
+/* allRedFlags page */
+.col2-wrapper {
+  display: block;
+  margin-left: 12px;
+  font-size: 1.3em;
+}
+.col2-wrapper h2 {
+  color: #7451eb;
+}
+@media only screen and (min-width: 1024px) {
+  .wrapper {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: inline-flex;
+    border: rgb(221, 220, 220) solid ;
+    color: black;
+    width: 45%;
+    font: bold;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-left: 2%;
+    position: inherit;
+    margin-top: 80px;
+}
+.wrapper:hover {
+  cursor: pointer;
+}
+.col2-wrapper {
+  display: block;
+  float: left;
+  margin-left: 10px;
+  font-size: 1em;
+}
+.col2-wrapper h2 {
+  color: #2f0d9c;
+}
+}
+/* specific flag page */
+.flag-details {
+  text-align: center;
+}
+.col2-flag div {
+  margin-top: 1%;
+}
+.col2-flag div span {
+  margin-left: 1%;
+  font-size:  1em;
+  color: #7451eb;
+  
+}
+input[type=submit].submitt {
+  margin-left: 120px;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  box-sizing: border-box;
+  display: block;
+  flex-direction: row;
+  justify-content: center; 
+  align-items: center;
+  padding: 0.875rem 20px;
+  border: 0;
+  border-radius: 3rem;
+  font-family: Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  width: 170px;
+  text-transform: uppercase;
+  color : #fff;
+  background-color: #2f0d9c;
+}
+@media only screen and (min-width: 1024px) {
+  .flag-details {
+    text-align: center;
+  }
+  
+  .col2-flag {
+    display: block;
+    float: left;
+    margin-left: 3%;
+    width: 50%;
+    text-align: left;
+    margin-top: 2%;
+    margin-right: 1%;
+  }
+  .col2-flag div {
+    margin-top: 1%;
+    margin-bottom: 5px;
+  }
+  
+  .col2-flag div span {
+    margin-left: 1%;
+    font-size:  1em;
+    color: #7451eb;
+    
+  }
+  .col2-flag div:first-of-type {
+    font-size: 1.4em;
+  }
+  .col2-flag div:first-of-type .fraud {
+    margin-top: 4px;
+    font-size: 0.5em;
+    font-weight: lighter;
+    float: right;
+    color: rgba(155, 53, 67, 0.986);
+  }
+  
+  .col2-flag div:last-of-type span {
+    color: chocolate;
+  }
+  
+  .col2-flag select {
+    height: 30px;
+    width: auto;
+  }
+  
+  .col2-flag select option {
+    padding: 10px;
+  }
+  .wrapper-flag-details {
+    width: 70%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: inline-flex;
+    border: rgb(221, 220, 220) solid thin;
+    padding: 30px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 2%;
+    position: inherit;
+    margin-top: 5%;
+  }
+  input[type=submit].submitt {
+    margin-left: 80px;
+    margin-top: 130px;
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    padding: 0.875rem 24px;
+    border: 0;
+    border-radius: 3rem;
+    font-family: Roboto, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    width: 170px;
+    text-transform: uppercase;
+    color : #fff;
+    background-color:#7451eb;
+  }
+  
+  .col1-details {
+    width: 50%;
+  }
+  
+  .col1-details img {
+    margin-top: 50px;
+    width: 100%;
+  }
+  .col2-flag h2 {
+    color: #7451eb;
+  }
+}
+
+
+
