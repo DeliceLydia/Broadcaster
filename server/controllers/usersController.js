@@ -15,7 +15,7 @@ class Users {
             }
             const user = users.find(u => u.email === req.body.email);
             if (user) {
-                return responseMessage.errorMessage(res, 400, 'email taken');
+                return responseMessage.errorMessage(res, 401, 'Email already exist');
                 }
                 const hash = bcrypt.hashSync(req.body.password.trim(),10);
                 const id = parseInt(users.length + 1);
