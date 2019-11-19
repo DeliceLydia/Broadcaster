@@ -10,8 +10,8 @@ class RedFlags {
     if (error) { return responseMessage.errorMessage(res, 400, error.details[0].message); }
 
     const redFlagId = redFlags.length + 1;
-    const { title, type, comment, location, status } = req.body;
-    const redFlag = { redFlagId, created_on: moment().format('LL'), title, type, comment, createdBy: req.user.email, location, status, };
+    const { title, type, location, comment,status, image, video } = req.body;
+    const redFlag = { redFlagId, created_on: moment().format('LL'), title, type, comment, createdBy: req.user.email, location, status, image, video };
     redFlags.push(redFlag);
     return responseMessage.successWithData(res, 200, 'Created red flag record', { redFlagId });
   }
@@ -57,6 +57,17 @@ class RedFlags {
     else if (check_Flag.createdBy === req.user.email) {
       check_Flag.comment = req.body.comment;
       return responseMessage.successWithData(res, 200, "updated red-flag record's comment ", { redFlagId: check_Flag.redFlagId })
+    }
+  }
+  static deleteRedflag(req, res) {
+    const deleteOne = redFlags.find(d => d.redFlagId === parseInt(req.params.redFlagId));
+    if (!deleteOne) { return responseMessage.errorMessage(res, 404, 'red flag with that ID is not found') }
+    else if (deleteOne.createdBy !== req.user.email) {
+      return responseMessage.errorMessage(res, 400, 'this record does not belong to you')}
+    else if (deleteOne) {
+      const index = redFlags.indexOf(deleteOne);
+      redFlags.splice(index, 1);
+      return responseMessage.successWithNoData(res, 200, 'red-flag record has been deleted”')
     }
   }
   }
