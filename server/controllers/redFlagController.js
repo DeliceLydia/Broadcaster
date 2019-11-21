@@ -42,7 +42,7 @@ class RedFlags {
     else if (check_redFlag.createdBy !== req.user.email) {
       return responseMessage.errorMessage(res, 400, 'this record does not belong to you')
     }
-    else if (check_redFlag.createdBy === req.user.email) {
+    else{
       check_redFlag.location = req.body.location;
       return responseMessage.successWithData(res, 200, "updated red-flag record's location", { redFlagId: check_redFlag.redFlagId })
     }
@@ -59,14 +59,15 @@ class RedFlags {
     else if (check_Flag.createdBy !== req.user.email) {
       return responseMessage.errorMessage(res, 400, 'this record does not belong to you')
     }
-    else if (check_Flag.createdBy === req.user.email) {
+    else {
       check_Flag.comment = req.body.comment;
       return responseMessage.successWithData(res, 200, "updated red-flag record's comment", { redFlagId: check_Flag.redFlagId })
     }
   }
 
   // Delete One //
-  static deleteRedflag(req, res) {
+  
+static deleteRedflag(req, res) {
     const deleteOne = redFlags.find(d => d.redFlagId === parseInt(req.params.redFlagId));
     if (!deleteOne) { return responseMessage.errorMessage(res, 404, 'red flag with that ID is not found') }
     else if (deleteOne.createdBy !== req.user.email) {
