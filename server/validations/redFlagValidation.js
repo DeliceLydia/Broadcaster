@@ -8,7 +8,7 @@ const validateRedFlag = {
             location: joi.string().trim().required(),
             status: joi.string().trim().required(),
             comment: joi.string().min(6).max(100).required(),
-            image: joi.required(),
+            image: joi.optional(),
             video: joi.optional()
         };
         return joi.validate(redFlag, schema);
