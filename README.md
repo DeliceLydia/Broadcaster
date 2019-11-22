@@ -30,10 +30,10 @@ Corruption is a huge bane to Africa’s development. African countries must deve
 | /api/v1/auth/signin | POST | Get the user to signin|
 | /api/v1/red-flags | POST | Get the user to post a redFlag record |
 | /api/v1/red-flags/:redFlagId | GET | Get the user to get all redflags records |
- /api/v1/red-flags/:redFlagsId | GET |Get user to view a specific redflag by Id  |
+ /api/v1/red-flags/:redFlagId | GET |Get user to view a specific redflag by Id  |
 | /api/v1/red-flags/:redFlagId | DELETE| Get the user to DELETE his redflags records |
-| /api/v1/red-flags/:redFlagsId/location| PATCH | Get the user to change the location of the redflag|
-| /api/v1/red-flags/:redFlagsId/comment| PATCH | Get the user to change the comment of the redflag|
+| /api/v1/red-flags/:redFlagId/location| PATCH | Get the user to change the location of the redflag|
+| /api/v1/red-flags/:redFlagId/comment| PATCH | Get the user to change the comment of the redflag|
 
 For more details about endpoints [check the documentation here](https://github.com/DeliceLydia/Broadcaster
 
