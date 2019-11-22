@@ -1,6 +1,6 @@
-.DS_Store
+.nyc_output
+coverage
+.env
 node_modules
 package-lock.json
-.env
-coverage
-.nyc_output
+DS_Store
