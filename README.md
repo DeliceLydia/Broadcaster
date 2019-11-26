@@ -88,7 +88,3 @@ It will install the node_modules which will help you run the project on your loc
 ## Author
 - Lydia Ingabire <Delydia84@gmail.com>
 
----
-
-## License & copyright
-Copyright (c) Delice Lydia, Software developer

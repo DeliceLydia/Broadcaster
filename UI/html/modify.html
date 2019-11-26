@@ -13,33 +13,63 @@
 
 <body class="body">
     <header id="header">
-        <a href="index.html"><div class="logo"><img src="../assets/logo.png" alt=""></div></a>
+        <a href="index.html">
+            <div class="logo"><img src="../assets/logo.png" alt=""></div>
+        </a>
         <div class="nav-items">
             <ul>
-                <li><a href="redFlag.html">RedFlag</a></li>
                 <li><a href="AllRedFlag.html">RedFlags</a></li>
-                <li><a href="signin.html">Sign Out</a></li>
             </ul>
         </div>
     </header>
-    <div class="flag-details" >
+    <div class="flag-details">
+        <h1>RED FLAG</h1>
         <div class="wrapper-flag-details">
             <div class="col1-details">
-                <img src="../assets/images.jpeg" alt="Vehicle">
+                <img src="../assets/images.jpeg" alt="Vehicle" width="500" height="300">
             </div>
-            <div class="col2-flag">
-                <h2>RED FLAG</h2>
-                <div>Created On : <span>28/09/2019</span></div>
-                <div>Title : <span>Corruption</span></div>
-                <div>Type : <span>Red flag</span></div>
-                <div>Location : <span>Kigali</span></div>
-                <div>Status : <span>Resolved</span></div>
-                <div>Comment :
-                    <p>I applied for a job and passed all exams but<br>
-                        manager asked me money so that he can offer me a job
-                    </p>
-                    <a href= "specificFlag.html" class="submitt">Post</a> 
+            <div class="col-flag">
+                <div class="row">
+                    <div class="title">
+                        <label>Created On</label>
+                    </div>
+                    <div class="placeholder">
+                        <input type="text" placeholder="28/09/2019">
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="title">
+                        <label>Title</label>
+                    </div>
+                    <div class="placeholder">
+                        <input type="text" placeholder="Corruption">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="title">
+                        <label>Type</label>
+                    </div>
+                    <div class="placeholder">
+                        <input type="text" placeholder="redFlag">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="title">
+                        <label>Location</label>
+                    </div>
+                    <div class="placeholder">
+                        <input type="text" placeholder="Kigali">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="title">
+                        <label>Comment</label>
+                    </div>
+                    <div class="placeholder">
+                        <input type="text" placeholder="I applied for a job and passed all exams but">
+                    </div>
+                </div>
+                <a href="specificFlag.html" class="button">Post</a>
             </div>
         </div>
     </div>
