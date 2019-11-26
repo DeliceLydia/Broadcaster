@@ -42,9 +42,10 @@ body {
     } 
     .right_side h1{
       padding: 20px 0;
-      padding-left: 100px;
-      font-size: 1.3em;
-      color: #000000;
+    padding-left: 160px;
+    font-size: 1.3em;
+    background-color: #7451eb;
+    color: #fff;
     }
     input[type=text], select {
       width: 320px;
@@ -180,7 +181,7 @@ body {
     box-sizing: border-box;
     resize: vertical;
   }
-  .flags h1{
+  h1{
     padding: 20px 0;
     padding-left: 160px;
     font-size: 1.3em;
