@@ -12,7 +12,9 @@ dotenv.config();
 class Users {
     static signup(req,res) {
             const { error } = validateSignup.validation(req.body);
-            if (error) {return responseMessage.errorMessage(res, 400, 'you are not allowed to post check your entry!');}
+            if (error) {
+                const message = error.details.map(item => item.message.replace(/"/g, '')).join(', ');
+                return responseMessage.errorMessage(res, 400,  message);}
             const user = findUser(req.body.email);
             if (user) {
                 return responseMessage.errorMessage(res, 400, 'Email already exist');
