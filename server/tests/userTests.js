@@ -1,7 +1,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import dotenv from 'dotenv';
-import app from '../app';
+import app from '../server';
 
 dotenv.config();
 chai.use(chaiHttp);
@@ -42,6 +42,24 @@ describe('signup', ()=> {
         })
     })
     it('user should not be able to create an account when using existing email', (done)=>{
+        const newUser = {
+            firstname : 'cycy',
+            lastname: 'nshuti',
+            email: 'nshuti@gmail.com',
+            phoneNumber: '0785022617',
+            username: 'cycy',
+            password: '123456'
+        };
+        chai.request(app)
+        .post('/api/v1/auth/signup')
+        .send(newUser)
+        .end((err, res)=>{
+            expect(res.status).to.be.eql(401);  
+            expect(res.body).to.be.an('Object');       
+            done();
+        })
+    })
+    it('user should not be able to create an account when using existing username', (done)=>{
         const newUser = {
             firstname : 'cycy',
             lastname: 'nshuti',
