@@ -1,0 +1,335 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    }
+  header {
+      display: flex;
+   }
+   .logo {
+    width: 190px;
+    margin-top: -10%;
+    margin-left: 5%;
+   }
+  .nav-items {
+    margin-top: 13%;
+    margin-left: 7%;
+    }
+  .nav-items ul li a {
+    text-decoration: none;
+    font-size: 1.3em;
+  }
+  .nav-items ul li a:hover{
+      background: none;
+      transition-duration: 0.05s;
+      cursor: pointer;
+      background-color: #7451eb;
+  }
+  .nav-items ul {
+    list-style: none;
+  }
+  .signup {
+    margin: 15px auto;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 30px 30px;
+    padding-left: 70px;
+    background: #fff;
+    border: 2px solid #c4c4c4;
+    
+  }
+  .signup-input {
+    max-width: 350px;
+    height: 60px;
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-family: serif;
+    background: #fff; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+   }
+   .signup-password{
+    max-width: 340px;
+    height: 60px;
+    margin-bottom: 45px;
+    padding-left:10px;
+    font-size: 20px;
+    font-family: serif;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;  
+  }
+  input[type=submit].signup-button {
+    margin-left: 90px;
+    margin-top: 30px;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.875rem 24px;
+    border: 0;
+    border-radius: 3rem;
+    font-family: Roboto, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    width: 170px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #7451eb;
+  
+  }
+  .signup-lost {
+   font-size: 1.1em;
+   margin-top: 5px;
+   margin-left: 80px;
+  }
+  .signup-lost a {
+    color: #7451eb;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    background: none;
+  }
+  @media only screen and (max-width: 768px) {
+    .signup {
+      margin: 20px auto;
+      margin-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      padding: 30px 30px;
+      padding-left: 70px;
+      background: #fff;
+      border: 2px solid #c4c4c4;
+      
+    }
+    .nav-items {
+      margin-top: 6%;
+      width: 100%;
+      margin-left: 350px;
+      
+    }
+    .signup-input {
+      max-width: 340px;
+      height: 55px;
+      margin-bottom: 25px;
+      font-size: 20px;
+      font-family: serif;
+      background: #fff; 
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      
+     }
+    .signup-password{
+      max-width: 340px;
+      height: 55px;
+      margin-bottom: 25px;
+      font-size: 20px;
+      font-family: serif;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px; 
+    }
+    .signup-lost {
+      margin-left: 260px;
+    }
+    .signup-lost a {
+      color: #7451eb;
+      font-weight: bold;
+      text-decoration: none;
+      border: none;
+      background: none;
+    }
+  }
+  
+  @media only screen and (min-width: 1024px) {
+    .nav-items {
+      margin-top: 2%;
+      width: 100%;
+      align-items: center;
+      
+    }
+    .nav-items ul {
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        float: right;
+        justify-content: flex-end;
+        list-style: none;
+      }
+    .nav-items ul li {
+     margin: 0 40px 0 5px;
+     }
+    .nav-items ul li a{
+      margin: 2px;
+      padding: 5px;
+      color: #000000;
+      text-decoration: none;
+      letter-spacing: .2ch;
+      font-size: 1.3em;
+    }
+    .signup {
+      margin: 30px auto;
+      margin-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+      padding: 30px 30px;
+      padding-right: 50px;
+      background: #fff;
+      border: 2px solid #c4c4c4;
+      
+  }
+  .signup-input {
+    max-width: 340px;
+    height: 50px;
+    margin-bottom: 25px;
+    margin-left: 50px;
+    font-size: 20px;
+    font-family: serif;
+    background: #fff; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+   }
+   .signup-password{
+    max-width: 340px;
+    height: 50px;
+    margin-bottom: 25px;
+    margin-left: 50px;
+    font-size: 20px;
+    font-family: serif;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+  }
+  input[type=submit].signup-button {
+    margin-left: 120px;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.875rem 24px;
+    border: 0;
+    border-radius: 3rem;
+    font-family: Roboto, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    width: 170px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #7451eb;
+  
+  }
+   .signup h2 {
+    margin-left: 35px;
+  }
+  .signup-lost {
+    margin-left: 360px;
+  }
+  .signup-lost a {
+    color: #7451eb;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    background: none;
+  }
+  }
+  @media only screen and (min-width: 1440px){
+    .signup {
+      margin: 30px auto;
+      margin-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+      width: 35%;
+      padding: 30px 30px;
+      padding-left: 70px;
+      background: #fff;
+      border: 2px solid #c4c4c4;
+      
+  }
+  .signup-lost {
+    margin-left: 550px;
+  }
+  .signup-lost a {
+    color: #7451eb;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    background: none;
+  }
+  }
+  @media only screen and (min-width: 1800px){
+    .signup {
+        margin: 10px auto;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        width: 21%;
+        padding: 30px 30px;
+        padding-left: 70px;
+        background: #fff;
+        border: 2px solid #c4c4c4;
+        
+    } 
+    .signup-input {
+        max-width: 340px;
+        height: 50px;
+        margin-bottom: 25px;
+        margin-left: 10px; 
+        font-size: 20px;
+        font-family: serif;
+        background: #fff; 
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        
+       }
+    .signup h2 {
+        margin-left: 10px;
+      }
+    .signup-password{
+        max-width: 330px;
+        height: 50px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        font-size: 20px;
+        font-family: serif;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px; 
+      }
+      .signup-lost {
+        margin-left: 800px;
+      }
+      .signup-lost a {
+        color: #7451eb;
+        font-weight: bold;
+        text-decoration: none;
+        border: none;
+        background: none;
+      }
+      input[type=submit].signup-button {
+        margin-left: 80px;
+        box-sizing: border-box;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.875rem 24px;
+        border: 0;
+        border-radius: 3rem;
+        font-family: Roboto, sans-serif;
+        font-size: 0.875rem;
+        font-weight: 500;
+        width: 170px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+        background-color: #7451eb;
+      
+      }
+  } 
+  

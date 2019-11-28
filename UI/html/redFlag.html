@@ -8,7 +8,7 @@
     <meta name="keywords" content="Broadcaster">
     <meta name="author" content="Delice Lydia">
     <title>Broadcaster | homepage</title>
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/redflag.css">
 </head>
 
 <body class="body">
@@ -17,7 +17,6 @@
         <div class="nav-items">
             <ul>
                 <li><a href="AllRedFlag.html">RedFlags/Interventions</a></li>
-                <li><a href="signin.html">Log Out</a></li>
             </ul>
         </div>
     </header>
@@ -39,7 +38,7 @@
                             <label>Title</label>
                         </div>
                         <div class="placeholder">
-                            <input type="text" placeholder="title" required />
+                            <input type="text" class="label" placeholder="title" required />
                         </div>
                     </div>
                     <div class="row">
@@ -47,7 +46,7 @@
                             <label>Type</label>
                         </div>
                         <div class="placeholder">
-                            <select id="status">
+                            <select id="type" class="label">
                                 <option value="new">red flag</option>
                                 <option value="use">intervention record</option>
                             </select>
@@ -58,20 +57,7 @@
                             <label>Location</label>
                         </div>
                         <div class="placeholder">
-                            <input type="text" placeholder="location" required />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="title">
-                            <label>Status</label>
-                        </div>
-                        <div class="placeholder">
-                            <select id="status">
-                                <option value="new">under investigation</option>
-                                <option value="use">resolved</option>
-                                <option value="use">rejected</option>
-                                <option value="use">draft</option>
-                            </select>
+                            <input type="text" class="label" placeholder="location" required />
                         </div>
                     </div>
                     <div class="row">
@@ -79,7 +65,7 @@
                             <label>Comment</label>
                         </div>
                         <div class="placeholder">
-                            <input type="text" placeholder="comment" required />
+                            <input type="text" class="label" placeholder="comment" required />
                         </div>
                     </div>
                     <div class="row">
@@ -87,7 +73,7 @@
                             <label>Upload image</label>
                         </div>
                         <div class="placeholder">
-                            <input type="file">
+                            <input type="file" class="label">
                         </div>
                     </div>
                     <div class="row">
@@ -95,7 +81,7 @@
                             <label>Upload video</label>
                         </div>
                         <div class="placeholder">
-                            <input type="file">
+                            <input type="file" class="label">
                         </div>
                     </div>
                     <input type="submit" name="submit" class="submit" value="Report" />

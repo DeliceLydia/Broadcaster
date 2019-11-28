@@ -1,8 +1,10 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import {validateSignup,validateSignin} from '../validations/userValidations';
-import users from '../models/usersModel';
+import {validateSignup} from '../validations/userValidations';
+import {findUser, findUsername} from '../models/userModels';
+import users from '../data/usersData';
+import findId from '../helpers/helpers';
 import responseMessage from '../helpers/response';
 
 dotenv.config();
@@ -11,41 +13,36 @@ class Users {
     static signup(req,res) {
             const { error } = validateSignup.validation(req.body);
             if (error) {
-                return responseMessage.errorMessage(res, 400, error.details[0].message);
-            }
-            const user = users.find(u => u.email === req.body.email);
+                const message = error.details.map(item => item.message.replace(/"/g, '')).join(', ');
+                return responseMessage.errorMessage(res, 400,  message);}
+            const user = findUser(req.body.email);
             if (user) {
-                return responseMessage.errorMessage(res, 400, 'email taken');
+                return responseMessage.errorMessage(res, 400, 'Email already exist');
                 }
-                const hash = bcrypt.hashSync(req.body.password.trim(),10);
-                const id = parseInt(users.length + 1);
+            const checkUsername = findUsername(req.body.username)
+            if(checkUsername) {
+                return responseMessage.errorMessage(res, 400, 'username already exist'); 
+            }
+                const hash = bcrypt.hashSync(req.body.password.trim(),10); 
+                const id = findId;
                 const{firstname, lastname, email, phoneNumber, username} = req.body;
                 const newUser = {id, firstname, lastname, email, phoneNumber, username, password: hash};
-                const payload = {
-                    id: newUser.id,
-                    firstname: newUser.firstname,
-                    lastname: newUser.lastname,
-                    email: newUser.email
-                }
+                const payload = {id: newUser.id, email: newUser.email}
                 const token = jwt.sign(payload, 'SECRET_KEY', { expiresIn: '24hrs' });
                 users.push(newUser);
-                return responseMessage.successWithData(res, 201, 'User created successfully', {token});
+                return responseMessage.successWithData(res, 201, 'User created successfully',token, { firstname, lastname, email,phoneNumber, username});
     }
     static signin(req,res) {
-        const { error } = validateSignin.validation(req.body);
-            if (error) {
-                return responseMessage.errorMessage(res, 400, error.details[0].message);}
-            const user = users.find(u => u.email === req.body.email);
-            
+            const user = findUser(req.body.email)
             if(!user) {return responseMessage.errorMessage(res, 400, 'incorrect email or password');}
-            const password = bcrypt.compareSync(req.body.password.trim(), user.password);
             
-            if (!password) {
-            return responseMessage.errorMessage(res, 400, 'incorrect email or password');}
-    const payload = {id: user.id, firstname: user.firstname, lastname: user.lastname, email: user.email}
-    const token = jwt.sign(payload, 'SECRET_KEY', { expiresIn: '1d' });
-    return responseMessage.successWithData(res, 200, 'User is successfully logged in!', {token});
+            const password = bcrypt.compareSync(req.body.password.trim(), user.password);
+            if(!password) {return responseMessage.errorMessage(res, 400, 'incorrect email or password');}
+    
+            const payload = {id: user.id, email: user.email}
+            const token = jwt.sign(payload, 'SECRET_KEY', { expiresIn: '1d' });
+            return responseMessage.successWithData(res, 200, 'User is successfully logged in!', token,
+             {firstname: user.firstname, lastname: user.lastname, email: user.email, phoneNumber: user.phoneNumber, username: user.username });
   }
 }
 export default Users;
-  

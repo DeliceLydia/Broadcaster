@@ -1,0 +1,294 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    }
+  header {
+      display: flex;
+   }
+   .logo {
+    width: 190px;
+    margin-top: -10%;
+    margin-left: 5%;
+   }
+  .nav-items {
+    margin-top: 13%;
+    margin-left: 7%;
+    }
+  .nav-items ul li a {
+    text-decoration: none;
+    font-size: 1.3em;
+  }
+  .nav-items ul li a:hover{
+      background: none;
+      transition-duration: 0.05s;
+      cursor: pointer;
+      background-color: #7451eb;
+  }
+  .nav-items ul {
+    list-style: none;
+  }
+
+.login {
+    margin: 30px auto;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 30px 30px;
+    padding-left: 70px;
+    background: #fff;
+    border: 2px solid #c4c4c4;;
+  }
+  .login h2 {
+    padding-left: 90px;
+  }
+  .login-input {
+    max-width: 350px;
+    height: 70px;
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-family: serif;
+    background: #fff; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    float: right;
+  } 
+  input[type=submit].login-button {
+    margin-left: 90px;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.875rem 24px;
+    border: 0;
+    border-radius: 3rem;
+    font-family: Roboto, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    width: 170px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #7451eb;
+  }
+  .signin-lost {
+    margin-left: 100px;
+  }
+  .signin-lost a {
+    color: #7451eb;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    background: none;
+  }
+  @media only screen and (min-width: 650px){
+    .nav-items {
+        margin-top: 7%;
+        margin-left: 50%; 
+        }
+    .login {
+      margin: 30px auto;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+      padding: 30px 30px;
+      padding-left: 70px;
+      background: #fff;
+      border: 2px solid #c4c4c4;;
+    }
+    .login-input {
+      max-width: 350px;
+      height: 50px;
+      margin-bottom: 25px;
+      margin-left: 25px;
+      font-size: 20px;
+      font-family: serif;
+      background: #fff; 
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      float: right;
+    } 
+    .password{
+      max-width: 340px;
+      height: 50px;
+      margin-bottom: 25px;
+      padding-left:10px;
+      font-size: 20px;
+      margin-left: 25px;
+      font-family: serif;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;  
+    }
+    .signin-lost {
+      margin-left: 250px;
+    }
+    .signin-lost a {
+      color: #7451eb;
+      font-weight: bold;
+      text-decoration: none;
+      border: none;
+      background: none;
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    .nav-items {
+        margin-top: 6%;
+        margin-left: 60%; 
+        }
+    .login {
+      margin: 150px auto;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      padding: 30px 40px;
+      padding-left: 60px;
+      background: #fff;
+      border: 2px solid #c4c4c4;;
+    } 
+    .login-input {
+      max-width: 340px;
+      height: 50px;
+      margin-bottom: 25px;
+      margin-left: 60px;
+      font-size: 20px;
+      font-family: serif;
+      background: #fff; 
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      float: right;
+    }
+    .password{
+      max-width: 330px;
+      height: 50px;
+      margin-bottom: 25px;
+      padding-left:10px;
+      font-size: 20px;
+      margin-left: 60px;
+      font-family: serif;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;  
+    } 
+    input[type=submit].login-button {
+      margin-left: 130px;
+      box-sizing: border-box;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.875rem 24px;
+      border: 0;
+      border-radius: 3rem;
+      font-family: Roboto, sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      width: 170px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #fff;
+      background-color: #7451eb;
+  }
+  .signin-lost {
+    margin-left: 400px;
+  }
+  .signin-lost a {
+    color: #7451eb;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    background: none;
+  }
+  @media only screen and (min-width: 1440px){
+    .nav-items {
+        margin-top: 4%;
+        margin-left: 70%; 
+        }
+    .logo {
+        width: 190px;
+        margin-top: -10%;
+        margin-left: 10%;
+     }
+     .login h2 {
+        padding-left: 130px;
+      }
+    .login {
+      margin: 150px auto;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      width: 33%;
+      padding: 30px 40px;
+      padding-left: 60px;
+      background: #fff;
+      border: 2px solid #c4c4c4;;
+    } 
+    .signin-lost {
+      margin-left: 600px;
+    }
+    .signin-lost a {
+      color: #7451eb;
+      font-weight: bold;
+      text-decoration: none;
+      border: none;
+      background: none;
+    }
+  }
+  @media only screen and (min-width: 1800px){
+    .nav-items {
+        margin-top: 2%;
+        margin-left: 80%; 
+    }
+    .logo {
+        width: 190px;
+        margin-top: -10%;
+        margin-left: 20%;
+     }
+    .login {
+      margin: 150px auto;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      width: 25%;
+      padding: 30px 40px;
+      padding-left: 50px;
+      background: #fff;
+      border: 2px solid #c4c4c4;;
+    } 
+    .login-input {
+      max-width: 340px;
+      height: 50px;
+      margin-bottom: 25px;
+      margin-left: 70px;
+      font-size: 20px;
+      font-family: serif;
+      background: #fff; 
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      float: right;
+    }
+    .password{
+      max-width: 330px;
+      height: 50px;
+      margin-bottom: 25px;
+      padding-left:10px;
+      font-size: 20px;
+      margin-left: 70px;
+      font-family: serif;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;  
+    }
+    .signin-lost {
+      margin-left: 850px;
+    }
+    .signin-lost a {
+      color: #7451eb;
+      font-weight: bold;
+      text-decoration: none;
+      border: none;
+      background: none;
+    }
+  }
+}

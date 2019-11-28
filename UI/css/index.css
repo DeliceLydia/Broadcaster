@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     }
+
 p, blockquote {
     font-size: .9em;
     line-height: 1.6em;
@@ -204,7 +205,7 @@ nav ul li:hover {
         color: black;
         background-color: inherit;
         text-align: right;
-        padding: 1em 1px;;
+        padding: 1em 1px;
         
     }
     nav ul li a:hover {
@@ -222,3 +223,4 @@ nav ul li:hover {
         padding: 6em 0 4em;
     }
 }
+
