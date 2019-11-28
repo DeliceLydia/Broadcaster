@@ -25,7 +25,7 @@ describe('signup', ()=> {
             expect(res.status).to.be.eql(200, 'Response status is wrong');
             expect(res.body).to.be.an('Object');
             expect(res.body.message).not.to.be.empty;
-            expect(res.body.message).to.equals('Welcome to the Broadcast application');
+            expect(res.body.message).to.equals('Welcome to the Broadcaster application');
             done();
         })
     })

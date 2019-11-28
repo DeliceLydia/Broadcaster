@@ -11,7 +11,7 @@ app.use('/', redFlag_router);
 app.get('/', (req, res) => {
     res.send({
       status: 200,
-      message: 'Welcome to the Broadcast application',
+      message: 'Welcome to the Broadcaster application',
     });
 });
 const port = process.env.PORT || 3000;
