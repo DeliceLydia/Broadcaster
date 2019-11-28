@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    }
+  header {
+      display: flex;
+   }
+   .logo {
+    width: 190px;
+    margin-top: -10%;
+    margin-left: 5%;
+   }
+  .menu li a{
+      text-decoration: none;
+  }
+  .menu ul li{
+    float: right;
+    display: block;
+	font-size: 1.3em;
+    padding-right: 20px; 
+    padding-top: 50px;
+    margin-left: 40px;
+	
+  }
+  .records ul li{
+      display: inline-flex;
+      margin-bottom: 30px;
+      padding: 30px;
+      color: #fff;
+      background-color: #7451eb;
+      font-size: 1.3em;
+  }
+  thead{
+    font-size: 1.3em;
+
+  }
+  .thead thead{
+      background-color: #7451eb;
+  }
+  thead td{
+    color: #23048a;
+    font-size: 1em;
+  }
+  td{
+    width: 10px; 
+    font-size: 1.3em;
+    padding: 6px;
+    color: black;
+    border-bottom: 1px #000000 solid; 
+    cursor: pointer;
+  }
+  .inbox{
+    height: 50vh;
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+    display: flex;
+  }
+  @media only screen and (min-width: 1024px){
+    .inbox{
+        height: 100vh;
+        width: 88%;
+        margin-top: -3%;
+        margin-left: 80px;
+        background-color: rgb(240, 240, 240);
+        display: flex;
+      } 
+      .records{
+          margin-left: 120px;
+      }
+      .records ul li{
+        display: inline-flex;
+        margin-bottom: 70px;
+        padding: 30px;
+        color: #fff;
+        background-color: #7451eb;
+        font-size: 1.3em;
+    }
+  }
+  @media only screen and (min-width: 1440px){
+    .inbox{
+        height: 86vh;
+        width: 60%;
+        margin-top: -3%;
+        margin-left: 250px;
+        background-color: rgb(240, 240, 240);
+        display: flex;
+      }
+      .records{
+        margin-left: 270px;
+    }
+    .records ul li{
+        display: inline-flex;
+        margin-bottom: 70px;
+        padding: 40px;
+        color: #fff;
+        background-color: #7451eb;
+        font-size: 1.3em;
+    }
+    .menu ul {
+      position: inherit;
+        width : auto;
+        background: none;
+        height: auto;
+        display: flex;
+        padding-top: 0;
+    }
+    .menu ul li{
+        float: left;
+        margin-right: 5px;
+        
+      }
+    .menu ul li a{
+      text-align: right;
+        /* padding: 1em 1px; */
+    }
+  }
+  @media only screen and (min-width: 1800px){
+    .inbox{
+        height: 60vh;
+        width: 70%;
+        margin-top: -4%;
+        margin-left: 500px;
+        background-color: rgb(240, 240, 240);
+        display: flex;
+      }
+      .records{
+        margin-left: 520px;
+    }
+    .records ul li{
+        display: inline-flex;
+        margin-bottom: 70px;
+        padding: 40px;
+        color: #fff;
+        background-color: #7451eb;
+        font-size: 1.3em;
+    }
+    .menu ul {
+      position: inherit;
+        width : 18vw;
+        background-color:rgb(240, 240, 240) ;
+        height: 71vh;
+        display: flex;
+        flex-direction: column;
+         padding-top: 0;
+    }
+    .logo {
+      width: 190px;
+      margin-top: 0;
+      margin-left: 5%;
+     }
+    #header{
+      display: flex;
+      flex-direction: column;
+    }
+    .dashboard{
+      margin-top: -40%;
+    }
+    thead{
+      font-size: 1.8em;
+  
+    }
+    td{
+      width: 20px; 
+      font-size: 1.3em;
+      padding: 10px 30px ;
+      color: black;
+      border-bottom: 1px #000000 solid; 
+      cursor: pointer;
+    }
+  }

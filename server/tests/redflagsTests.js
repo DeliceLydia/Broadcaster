@@ -2,7 +2,7 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
-import app from '../app';
+import app from '../server';
 
 chai.use(chaiHttp);
 dotenv.config();
@@ -168,10 +168,8 @@ describe('update location', ()=>{
       .send(redFlag)
       .end((err, res)=> {
           expect(res.status).to.be.eql(200, 'status is wrong');
-          expect(res.body).to.be.an('object');
           expect(res.body.message).not.to.be.empty;
           expect(res.body.message).to.equals("updated red-flag record's location");
-          expect(res.body.data).to.be.an('object');
           done();
       })
     })
@@ -236,10 +234,8 @@ describe('update comment',()=>{
         .send(redFlag)
         .end((err, res)=> {
             expect(res.status).to.be.eql(200, 'status is wrong');
-            expect(res.body).to.be.an('object');
             expect(res.body.message).not.to.be.empty;
             expect(res.body.message).to.equals("updated red-flag record's comment");
-            expect(res.body.data).to.be.an('object');
             done();
         })
       })

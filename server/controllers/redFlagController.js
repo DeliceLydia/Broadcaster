@@ -1,13 +1,13 @@
 import { validateRedFlag, validateLocation, validateComment } from '../validations/redFlagValidation';
 import responseMessage from '../helpers/response';
 import moment from 'moment';
-import redFlags from '../models/redFlagModel';
+import redFlags from '../data/redFlagData';
 
 
 class RedFlags {
   static postRedFlag(req, res) {
     const { error } = validateRedFlag.validation(req.body);
-    if (error) { return responseMessage.errorMessage(res, 400, error.details[0].message); }
+    if (error) { return responseMessage.errorMessage(res, 400, 'you are not allowed to post check your entry'); }
 
     const redFlagId = redFlags.length + 1;
     const { title, type, location, comment,status, image, video} = req.body;
@@ -32,36 +32,39 @@ class RedFlags {
   // Update Location //
   static updateLocation(req, res) {
     const { error } = validateLocation.validation(req.body);
-    if (error) { return responseMessage.errorMessage(res, 400, error.details[0].message); }
-    const check_redFlag = redFlags.find(i => i.redFlagId === parseInt(req.params.redFlagId));
+    if (error) { return responseMessage.errorMessage(res, 400,'you are not allowed to modify check your entry'); }
+    const Flag = redFlags.find(i => i.redFlagId === parseInt(req.params.redFlagId));
 
-    if (!check_redFlag) { return responseMessage.errorMessage(res, 404, 'red flag not found') }
+    if (!Flag) { return responseMessage.errorMessage(res, 404, 'red flag not found') }
 
-    else if (check_redFlag.status !== 'draft') { return responseMessage.errorMessage(res, 400, 'you are not allowed to change the location') }
+    else if (Flag.status !== 'draft') { return responseMessage.errorMessage(res, 400, 'you are not allowed to change the location') }
 
-    else if (check_redFlag.createdBy !== req.user.email) {
+    else if (Flag.createdBy !== req.user.email) {
       return responseMessage.errorMessage(res, 400, 'this record does not belong to you')
     }
     else{
-      check_redFlag.location = req.body.location;
-      return responseMessage.successWithData(res, 200, "updated red-flag record's location", { redFlagId: check_redFlag.redFlagId })
+      Flag.location = req.body.location;
+      return responseMessage.successWithData(res, 200, "updated red-flag record's location", 
+      { redFlagId: Flag.redFlagId , title: Flag.title, type: Flag.type, comment: Flag.comment, 
+        createdBy: req.user.email, location: Flag.location, status: Flag.status})
     }
  }
 
 //  update comment //
   static updateComment(req, res) {
     const { error } = validateComment.validation(req.body);
-    if (error) { return responseMessage.errorMessage(res, 400, error.details[0].message); }
-    const check_Flag = redFlags.find(i => i.redFlagId === parseInt(req.params.redFlagId));
+    if (error) { return responseMessage.errorMessage(res, 400, 'you are not allowed to update check your entry'); }
+    const Flag = redFlags.find(i => i.redFlagId === parseInt(req.params.redFlagId));
 
-    if (!check_Flag) { return responseMessage.errorMessage(res, 404, 'red flag not found') }
+    if (!Flag) { return responseMessage.errorMessage(res, 404, 'red flag not found') }
 
-    else if (check_Flag.createdBy !== req.user.email) {
+    else if (Flag.createdBy !== req.user.email) {
       return responseMessage.errorMessage(res, 400, 'this record does not belong to you')
     }
     else {
-      check_Flag.comment = req.body.comment;
-      return responseMessage.successWithData(res, 200, "updated red-flag record's comment", { redFlagId: check_Flag.redFlagId })
+      Flag.comment = req.body.comment;
+      return responseMessage.successWithData(res, 200, "updated red-flag record's comment", { redFlagId: Flag.redFlagId,title: Flag.title, type: Flag.type, comment: Flag.comment, 
+        createdBy: req.user.email, location: Flag.location, status: Flag.status})
     }
   }
 

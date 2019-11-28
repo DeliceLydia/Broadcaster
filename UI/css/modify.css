@@ -1,0 +1,202 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  }
+header {
+    display: flex;
+ }
+ .logo {
+  width: 190px;
+  margin-top: -10%;
+  margin-left: 20%;
+ }
+.nav-items {
+  margin-top: 3%;
+  margin-left: 75%;
+  }
+#items .nav-items {
+  display: flex;
+}
+.nav-items ul li a {
+  text-decoration: none;
+  font-size: 1.3em;
+}
+.nav-items ul li a:hover{
+    background: none;
+    transition-duration: 0.05s;
+    cursor: pointer;
+    background-color: #7451eb;
+}
+.nav-items ul {
+  list-style: none;
+}
+.wrapper-flag-details {
+  width: 100%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: inline-block;
+  padding: 30px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  position: inherit;
+  margin-top: 5%;
+}
+label {
+  padding: 5px 12px 12px 0px;
+  display: inline-block;
+}
+.placeholder{
+  float: left;
+  width: 50%;
+  margin-top: 13px;
+  margin-left: 100px;
+}
+.placeholder #status {
+  height: 40px;;
+}
+.placeholder .date {
+  width: 350px;
+  height: 40px;
+  border: 1px solid rgb(116, 92, 92);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.row {
+  display: flex;
+  clear: both;
+}
+.row .title {
+  max-width: 5vw;
+}
+.title {
+  float: left;
+  width: 25%;
+  margin-top: 4px;
+}
+
+.flag-details {
+  text-align: center;
+}
+.col-flag {
+  margin-right: 50%;
+  font-size:  1em;
+  color: #7451eb;
+  position: relative;
+  
+}
+.button {
+  margin-left: 120px;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  box-sizing: border-box;
+  display: block;
+  flex-direction: row;
+  justify-content: center; 
+  align-items: center;
+  padding: 0.875rem 20px;
+  border: 0;
+  border-radius: 3rem;
+  font-family: Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  width: 170px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color : #fff;
+  background-color: #7451eb;
+}
+  @media only screen and (min-width: 1024px){
+    .flag-details h1{
+      padding: 20px 0;
+      padding-left: 160px;
+      font-size: 1.3em;
+      color: #7451eb;
+    }
+    input[type=text], select {
+      width: 350px;
+      padding: 12px;
+      border: 1px solid rgb(116, 92, 92);
+      border-radius: 4px;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+    label {
+      padding: 10px 12px 12px 0px;
+      display: inline-block;
+      font-size: 1em;
+    }
+    .placeholder{
+      width: 30%;
+      margin-left: 40px;
+      margin-bottom: 10px;
+    }
+    .col1-details img {
+     margin-top: 5%;
+     margin-left: 10px;
+    }
+    .col-flag {
+      display: block;
+      float: right;
+      margin-left: 60px;
+      width: 50%;
+      text-align: left;
+      margin-top: 3%;
+      margin-right: 1%;
+  
+    }
+    .button{
+      margin-left: 80px;
+      margin-top: 70px;
+      box-sizing: border-box;
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: center; 
+      align-items: center;
+      padding: 0.875rem 24px;
+      border: 0;
+      border-radius: 3rem;
+      font-family: Roboto, sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      width: 170px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color : #fff;
+      background-color:#7451eb;
+    }
+  }
+  @media only screen and (min-width: 1440px){
+    .wrapper-flag-details {
+      width: 100%;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      display: inline-flex;
+      padding: 30px;
+      padding-right: 10px;
+      margin-bottom: 10px;
+      position: inherit;
+      margin-top: 5%;
+      border: 1px solid rgb(116, 92, 92);
+    }
+    .col1-details img {
+      margin-top: 5%;
+      margin-left: 100px;
+     }
+  }
+  @media only screen and (min-width: 1800px){
+    .wrapper-flag-details {
+      width: 100%;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      display: inline-flex;
+      padding: 30px;
+      padding-right: 10px;
+      margin-bottom: 10px;
+      position: inherit;
+      margin-top: 5px;
+      border: 1px solid rgb(116, 92, 92);
+    }
+    .col1-details img {
+      width: 700px;
+      height: 400px;
+      margin-top: 5%;
+      margin-left: 200px;
+     }
+  }

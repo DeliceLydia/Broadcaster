@@ -1,0 +1,205 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    }
+  header {
+      display: flex;
+   }
+   .logo {
+    width: 190px;
+    margin-top: -10%;
+    margin-left: 20%;
+   }
+  .nav-items {
+    margin-top: 4%;
+    margin-left: 75%;
+    }
+#items .nav-items {
+    display: flex;
+}
+  .nav-items ul li a {
+    text-decoration: none;
+    font-size: 1.3em;
+    display: block;
+  }
+  .nav-items ul li a:hover{
+      background: none;
+      transition-duration: 0.05s;
+      cursor: pointer;
+      background-color: #7451eb;
+  }
+  .nav-items ul {
+    list-style: none;
+  }
+.col2-wrapper {
+    display: block;
+    margin-left: 12px;
+    font-size: 1.3em;
+  }
+  .col2-wrapper h2 {
+    color: #7451eb;
+  }
+  .flag-details {
+    text-align: center;
+  }
+  .col2-flag div {
+    margin-top: 1%;
+  }
+  .col2-flag div span {
+    margin-left: 1%;
+    font-size:  1em;
+    color: #7451eb;
+    
+  }
+  .submitt {
+    margin-left: 120px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+    display: block;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    padding: 0.875rem 20px;
+    border: 0;
+    border-radius: 3rem;
+    font-family: Roboto, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    width: 170px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color : #fff;
+    background-color: #7451eb;
+  }
+  @media only screen and (min-width: 1024px) {
+    .flag-details {
+      text-align: center;
+    }
+    .col2-flag{
+        margin-top: 20px;
+        margin-left: 5px;
+    }
+    .col2-flag div span {
+        margin-left: 1%;
+        font-size:  1em;
+        color: #7451eb;
+        
+      }
+      .col2-flag div:first-of-type {
+        font-size: 1.4em;
+      }
+      .col2-flag div:first-of-type .fraud {
+        margin-top: 4px;
+        font-size: 0.5em;
+        font-weight: lighter;
+        float: right;
+        color: rgba(155, 53, 67, 0.986);
+      }
+      
+      .col2-flag div:last-of-type span {
+        color: chocolate;
+      }
+      
+      .col2-flag select {
+        height: 30px;
+        width: auto;
+      }
+      
+      .col2-flag select option {
+        padding: 10px;
+      }
+      .col1-details {
+        width: 50%;
+      }
+      .col1-details img{
+        width: 400px;
+        height: 300px;
+      }
+      h1 {
+        color: #7451eb;
+        margin-bottom: -3%;
+      }
+      .wrapper-flag-details {
+        width: 100%;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        display: inline-flex;
+        padding: 30px;
+        padding-right: 10px;
+        margin-bottom: 10px;
+        position: inherit;
+        margin-top: 5%;
+        border: 1px solid rgb(116, 92, 92);
+      }
+      .submitt {
+        margin-left: 50px;
+        margin-top: 130px;
+        box-sizing: border-box;
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: center; 
+        align-items: center;
+        padding: 0.875rem 24px;
+        border: 0;
+        border-radius: 3rem;
+        font-family: Roboto, sans-serif;
+        font-size: 0.875rem;
+        font-weight: 500;
+        width: 170px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color : #fff;
+        background-color:#7451eb;
+      }
+      @media only screen and (min-width: 1440px){
+        .flag-details {
+            text-align: center;
+          }
+          .col2-flag{
+              margin-top: 20px;
+              margin-left: 5px;
+          }
+            .wrapper-flag-details {
+              font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+              display: inline-flex;
+              padding: 30px;
+              padding-right: 10px;
+              margin-bottom: 10px;
+              position: inherit;
+              margin-top: 5%;
+              width: 100%; 
+              border: 1px solid rgb(116, 92, 92);
+            }
+            .col1-details img{
+                width: 600px;
+                height: 400px;
+              }
+            .submitt {
+              margin-left: 50px;
+              margin-top: 130px;
+              box-sizing: border-box;
+              display: inline-flex;
+              flex-direction: row;
+              justify-content: center; 
+              align-items: center;
+              padding: 0.875rem 24px;
+              border: 0;
+              border-radius: 3rem;
+              font-family: Roboto, sans-serif;
+              font-size: 0.875rem;
+              font-weight: 500;
+              width: 170px;
+              text-transform: uppercase;
+              text-decoration: none;
+              color : #fff;
+              background-color: #7451eb;
+      }
+    }
+    @media only screen and (min-width: 1440px){
+      .col1-details img{
+        width: 700px;
+        height: 400px;
+      }
+    }
+  }
+  

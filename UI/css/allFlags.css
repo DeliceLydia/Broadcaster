@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    }
+  header {
+      display: flex;
+   }
+   .logo {
+    width: 190px;
+    margin-top: -10%;
+    margin-left: 20%;
+   }
+  .nav-items {
+    margin-top: 4%;
+    margin-left: 65%;
+    }
+  .nav-items ul li a {
+    text-decoration: none;
+    font-size: 1.3em;
+  }
+  .nav-items ul li a:hover{
+      background: none;
+      transition-duration: 0.05s;
+      cursor: pointer;
+      background-color: #7451eb;
+  }
+  .nav-items ul {
+    list-style: none;
+  }
+.col2-wrapper {
+    display: block;
+    margin-left: 12px;
+    font-size: 1.3em;
+  }
+  .col2-wrapper h2 {
+    color: #7451eb;
+  }
+  @media only screen and (min-width: 1024px) {
+    .wrapper {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      display: inline-flex;
+      border: rgb(221, 220, 220) solid ;
+      color: black;
+      width: 90%;
+      font: bold;
+      padding: 10px;
+      margin-bottom: 20px;
+      margin-left: 4%;
+      position: inherit;
+      margin-top: 80px;
+  }
+  .wrapper:hover {
+    cursor: pointer;
+  }
+  .col2-wrapper {
+    display: block;
+    float: left;
+    margin-left: 10px;
+    font-size: 1em;
+  }
+  .col2-wrapper h2 {
+    color: #2f0d9c;
+  }
+  }
+  @media only screen and (min-width: 1440px){
+    .wrapper {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      display: inline-flex;
+      border: rgb(221, 220, 220) solid ;
+      color: black;
+      width: 60%;
+      font: bold;
+      padding: 10px;
+      margin-bottom: 20px;
+      margin-left: 20%;
+      position: inherit;
+      margin-top: 80px;
+  }
+  }
+  @media only screen and (min-width: 1800px){
+      .wrapper {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      display: inline-flex;
+      border: rgb(221, 220, 220) solid ;
+      color: black;
+      width: 40%;
+      font: bold;
+      padding: 10px;
+      margin-bottom: 20px;
+      margin-left: 5%;
+      position: inherit;
+      margin-top: 80px;
+  }
+  .nav-items {
+    margin-top: 2%;
+    margin-left: 75%;
+    }
+  }  
