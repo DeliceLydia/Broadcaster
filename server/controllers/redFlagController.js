@@ -7,8 +7,9 @@ import redFlags from '../data/redFlagData';
 class RedFlags {
   static postRedFlag(req, res) {
     const { error } = validateRedFlag.validation(req.body);
-    if (error) { return responseMessage.errorMessage(res, 400, 'you are not allowed to post check your entry'); }
-
+    if (error) { 
+      const message = error.details.map(item => item.message.replace(/"/g, '')).join(', ');
+      return responseMessage.errorMessage(res, 400,  message);}
     const redFlagId = redFlags.length + 1;
     const { title, type, location, comment,status, image, video} = req.body;
     const redFlag = { redFlagId, created_on: moment().format('LL'), title, type, comment, createdBy: req.user.email, location, status, image, video };
@@ -32,7 +33,9 @@ class RedFlags {
   // Update Location //
   static updateLocation(req, res) {
     const { error } = validateLocation.validation(req.body);
-    if (error) { return responseMessage.errorMessage(res, 400,'you are not allowed to modify check your entry'); }
+    if (error) {  
+    const message = error.details.map(item => item.message.replace(/"/g, '')).join(', ');
+    return responseMessage.errorMessage(res, 400,  message);} 
     const Flag = redFlags.find(i => i.redFlagId === parseInt(req.params.redFlagId));
 
     if (!Flag) { return responseMessage.errorMessage(res, 404, 'red flag not found') }
@@ -53,7 +56,8 @@ class RedFlags {
 //  update comment //
   static updateComment(req, res) {
     const { error } = validateComment.validation(req.body);
-    if (error) { return responseMessage.errorMessage(res, 400, 'you are not allowed to update check your entry'); }
+    if (error) {  const message = error.details.map(item => item.message.replace(/"/g, '')).join(', ');
+    return responseMessage.errorMessage(res, 400,  message);}
     const Flag = redFlags.find(i => i.redFlagId === parseInt(req.params.redFlagId));
 
     if (!Flag) { return responseMessage.errorMessage(res, 404, 'red flag not found') }
