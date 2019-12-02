@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon --exec babel-node ./server/server.js",
-    "test": "cd server &&  nyc --reporter=html --reporter=text mocha --require @babel/register tests/* --exit",
+    "tables": "node --require @babel/register ./server/database/db  createTables",
+    "drop": "node --require @babel/register ./server/database/db dropTables",
+    "test": "NODE_ENV=testing npm run drop && npm run tables &&  nyc --reporter=html --reporter=text mocha --timeout 5000 --require @babel/polyfill --require @babel/register server/tests/* --exit",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
@@ -22,6 +24,7 @@
     "@babel/cli": "^7.7.0",
     "@babel/core": "^7.7.2",
     "@babel/node": "^7.7.0",
+    "@babel/polyfill": "^7.7.0",
     "@babel/preset-env": "^7.7.1",
     "@babel/register": "^7.7.0",
     "bcrypt": "^3.0.6",
@@ -30,9 +33,11 @@
     "express": "^4.17.1",
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
+    "make-runnable": "^1.3.6",
     "moment": "^2.24.0",
     "nodemon": "^1.19.4",
-    "nyc": "^14.1.1"
+    "nyc": "^14.1.1",
+    "pg": "^7.14.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.7.0",

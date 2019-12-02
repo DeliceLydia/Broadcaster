@@ -28,4 +28,4 @@ const responseMessage = {
     }
 }
 
-module.exports = responseMessage;
+export default responseMessage;
