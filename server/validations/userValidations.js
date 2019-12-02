@@ -6,8 +6,8 @@ const validateSignup = {
             firstname: joi.string().trim().required(),
             lastname: joi.string().trim().required(),
             email: joi.string().email({ minDomainAtoms: 2 }).trim().required(),
-            phoneNumber: joi.string().trim().required(),
-            username: joi.string().trim().required(),
+            phoneNumber: joi.number().required(),
+            username: joi.string().min(4).max(6).trim().required(),
             password: joi.string().min(6).max(10).required(),
         };
         return joi.validate(signup, schema);
