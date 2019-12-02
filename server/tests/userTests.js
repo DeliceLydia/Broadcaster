@@ -13,7 +13,7 @@ const user = {
     email: 'cycy@gmail.com',
     phoneNumber: '0785022617',
     username: 'cycy',
-    password: '123456'
+    password: 'Lydia1@'
 };
 
 // signup //
@@ -48,7 +48,7 @@ describe('signup', ()=> {
             email: 'nshuti@gmail.com',
             phoneNumber: '0785022617',
             username: 'cycy',
-            password: '123456'
+            password: 'Lydia1@'
         };
         chai.request(app)
         .post('/api/v1/auth/signup')
@@ -66,7 +66,7 @@ describe('signup', ()=> {
             email: 'cycy@gmail.com',
             phoneNumber: '0785022617',
             username: 'cycy',
-            password: '123456'
+            password: 'Lydia1@'
         };
         chai.request(app)
         .post('/api/v1/auth/signup')
@@ -84,7 +84,7 @@ describe('signup', ()=> {
             email: 'nshuti@gmail.com',
             phoneNumber: '0785022617',
             username: "",
-            password: '123456'
+            password: 'Lydia1@'
         };
         chai.request(app)
         .post('/api/v1/auth/signup')
@@ -102,7 +102,7 @@ describe('signup', ()=> {
             email: 'nshuti@gmail.com',
             phoneNumber: '0785022617',
             username: "cycy",
-            password: '123456'
+            password: 'Lydia1@'
         };
         chai.request(app)
         .post('/api/v1/auth/signup')
@@ -119,7 +119,7 @@ describe('signin', ()=>{
     it('user should be able to signin', (done)=>{
      const returningUser = {
         email: 'cycy@gmail.com',
-        password: '123456'
+        password: 'Lydia1@'
      };
      chai.request(app)
      .post('/api/v1/auth/signin')
@@ -135,7 +135,7 @@ describe('signin', ()=>{
     it('user should not be able to signin when provided unexisted email',(done)=>{
         const returningUser = {
             email: 'cynthia@gmail.com',
-            password: '123456'
+            password: 'Lydia1@'
          };
          chai.request(app)
      .post('/api/v1/auth/signin')
@@ -163,7 +163,7 @@ it('user should not be able to signin when provided wrong password',(done)=>{
   it('user should not be able to signin when provided wrong data type',(done)=>{
     const returningUser = {
         email: 123,
-        password: '12345687'
+        password: 'Lydia1@'
      };
      chai.request(app)
  .post('/api/v1/auth/signin')
