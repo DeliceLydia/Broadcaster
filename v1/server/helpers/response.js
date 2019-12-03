@@ -19,14 +19,13 @@ const responseMessage = {
             message,
         })
     },
-    successUser(res, statusCode, message, data) {
+    successUser(res, statusCode, data) {
         return res.status(statusCode).json({
             statusCode,
-            message,
             data,
             
         })
     }
 }
 
-export default responseMessage;
+module.exports = responseMessage;

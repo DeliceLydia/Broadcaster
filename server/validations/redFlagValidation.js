@@ -6,7 +6,6 @@ const validateRedFlag = {
             title : joi.string().trim().required(),
             type: joi.string().trim().required(),
             location: joi.string().trim().required(),
-            status: joi.string().trim().required(),
             comment: joi.string().min(6).max(100).required(),
             image: joi.optional(),
             video: joi.optional()
@@ -14,20 +13,17 @@ const validateRedFlag = {
         return joi.validate(redFlag, schema);
     }
 }
-const validateLocation = {
-    validation(newLocation) {
-      const updateLocation = {
-        location: joi.string().required(),
+const validateModify = {
+    validation(newFlag) {
+      const updateFlag = {
+        title : joi.string().trim().optional(),
+        type: joi.string().trim().optional(),
+        location: joi.string().trim().optional(),
+        comment: joi.string().min(6).max(100).optional(),
+        image: joi.optional(),
+        video: joi.optional()
       };
-      return joi.validate(newLocation, updateLocation);
+      return joi.validate(newFlag, updateFlag);
     },
   };
-  const validateComment = {
-    validation(newComment) {
-      const updateComment = {
-        comment: joi.string().required(),
-      };
-      return joi.validate(newComment, updateComment);
-    },
-  };
-export {validateRedFlag, validateLocation, validateComment}
+export {validateRedFlag, validateModify}
