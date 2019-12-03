@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import {validateSignup} from '../validations/userValidations';
 import responseMessage from '../helpers/response';
-import sql from '../helpers/query';
+import sql from '../helpers/usersQuery';
 import pool from '../config/connect';
 
 dotenv.config();

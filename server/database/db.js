@@ -15,13 +15,14 @@ import pool from '../config/connect';
     const redflags = `
     CREATE TABLE IF NOT EXISTS redflags(
         id SERIAL PRIMARY KEY,
-        date TIMESTAMP NOT NULL,
+        created_on TIMESTAMP NOT NULL,
         title VARCHAR(20) NOT NULL,
         type VARCHAR(1000) NOT NULL,
         createdBy INTEGER NOT NULL,
         location  VARCHAR(20) NOT NULL,
         comment VARCHAR(1000) NOT NULL,
-        FOREIGN KEY (createdBy) REFERENCES users(id) ON DELETE CASCADE
+        status VARCHAR(50) NOT NULL,
+        image VARCHAR(100)
 
     );`
     const queries = `${users};${redflags}`;
