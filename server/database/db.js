@@ -10,7 +10,8 @@ import pool from '../config/connect';
         username VARCHAR(20) UNIQUE NOT NULL,
         phoneNumber VARCHAR(10) UNIQUE NOT NULL,
         email VARCHAR(30) UNIQUE NOT NULL,
-        password VARCHAR(300) NOT NULL
+        password VARCHAR(300) NOT NULL,
+        is_admin BOOLEAN 
     );`
     const redflags = `
     CREATE TABLE IF NOT EXISTS redflags(
