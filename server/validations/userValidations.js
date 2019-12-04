@@ -9,6 +9,7 @@ const validateSignup = {
             phoneNumber: joi.number().required(),
             username: joi.string().min(4).max(6).trim().required(),
             password: joi.string().regex(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/).trim().required(),
+            is_admin: joi.boolean().optional()
         };
         return joi.validate(signup, schema);
     }

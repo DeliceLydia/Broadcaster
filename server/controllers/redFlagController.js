@@ -20,14 +20,14 @@ class RedFlags {
         return responseMessage.successUser(res, 201, 'Created red flag record', {created_on, title, type, createdby, location, comment, status, image});
       }
 
-//   // GetAll//
+ // GetAll//
 static async getAll(req, res) {
     const redflags = await pool.query(sql.getAll);
   if (!redflags.rows[0]) { return responseMessage.errorMessage(res, 404, 'no red flags found'); }
   else { return responseMessage.successUser(res, 200, redflags.rows); }
 }
 
-//   // GetOne//
+// GetOne//
 static async getOne(req, res) {
     const id = req.params.id;
     const {rows} = await pool.query(sql.findFlagbyId, [id]);
@@ -35,28 +35,58 @@ static async getOne(req, res) {
     else { return responseMessage.successUser(res, 200, rows[0]); }
   }
 
-//   // Update Location //
-// static async updateRedFlag(req, res) {
-//     const { error } = validateModify.validation(req.body);
-//     if (error) {  
-//     const message = error.details.map(item => item.message.replace(/"/g, '')).join(', ');
-//     return responseMessage.errorMessage(res, 400,  message);} 
-//     const flagId = req.params.id;
-//     const findFlag = await pool.query(sql.findFlagbyId, [flagId]);
-//     if(findFlag.rowCount===0){
-//         return responseMessage.errorMessage(res, 404, 'red flag of that ID is not found');
-//     }
-//     if(findFlag.rows[0].createdby !== req.user.id) {
-        
-//         return responseMessage.errorMessage(res, 404, 'you are not allowed to change this red flag!');
-//     }
-//     await pool.query(sql.updateRedFlag, [req.body.location, flagId]);
-//     return responseMessage.successUser(res, 200, "updated red-flag record's location", {location: req.body.location,})
-// }
+ // Update Location //
+static async updateLocation(req, res) {
+    const { error } = validateModify.validation(req.body);
+    if (error) {  
+    const message = error.details.map(item => item.message.replace(/"/g, '')).join(', ');
+    return responseMessage.errorMessage(res, 400,  message);} 
+    
+    const flagId = req.params.id;
+    const findFlag = await pool.query(sql.findFlagbyId, [flagId]);
+    if(findFlag.rowCount===0){return responseMessage.errorMessage(res, 404, 'red flag of that ID is not found');}
+    
+    if(findFlag.rows[0].status !== 'draft'){return responseMessage.errorMessage(res, 400, 'Sorry you are not allowed to change the location');}
+    
+    if(findFlag.rows[0].createdby !== req.user.id) {return responseMessage.errorMessage(res, 400, 'you are not allowed to update this redflag location you are not the owner!');}
+    await pool.query(sql.updateLocation, [req.body.location, flagId]);
+    const{id, title, type, createdby} = findFlag.rows[0];
+    return responseMessage.successUser(res, 200, "updated red-flag record's location", {
+        id, title, type, createdby,location: req.body.location})
+    }
+// Update comment //
+static async updateComment(req, res) {
+    const { error } = validateModify.validation(req.body);
+    if (error) {  
+    const message = error.details.map(item => item.message.replace(/"/g, '')).join(', ');
+    return responseMessage.errorMessage(res, 400,  message);} 
+    
+    const flagId = req.params.id;
+    const findFlag = await pool.query(sql.findFlagbyId, [flagId]);
+    if(findFlag.rowCount===0){ return responseMessage.errorMessage(res, 404, 'red flag of that ID is not found');}
+    
+    if(findFlag.rows[0].status !== 'draft'){return responseMessage.errorMessage(res, 400, 'Sorry you are not allowed to change the location');}
+    
+    if(findFlag.rows[0].createdby !== req.user.id) {return responseMessage.errorMessage(res, 400, 'you are not allowed to update this redflag comment you are not the owner!');}
+    await pool.query(sql.updateComment, [req.body.comment, flagId]);
+    const{id, title, type, createdby, location} = findFlag.rows[0];
+    return responseMessage.successUser(res, 200, "updated red-flag record's comment", {
+        id, title, type, createdby, location, comment: req.body.comment})
+    }
 
-//     }
+// Status //
+static async changeStatus(req, res) {
+    if(req.user.is_admin !== true){ return responseMessage.errorMessage(res, 403, 'Sorry this service is strictly for the admin')}
+    const flagId = req.params.id;
+    const findFlag = await pool.query(sql.findFlagbyId, [flagId]);
+    if(findFlag.rowCount===0){return responseMessage.errorMessage(res, 404, 'red flag of that ID is not found');}
+    if(findFlag.rows[0].status !== 'draft'){return responseMessage.errorMessage(res, 400, 'Sorry you are not allowed to change the status');}
+    await pool.query(sql.changeStatus, [req.body.status, flagId]);
+    return responseMessage.successUser(res, 200, "updated red-flag record's status", {status : req.body.status})
+
+}
   
-//   // Delete One //
+// Delete One //
   
 static async deleteRedflag(req, res) {
     const flagid = req.params.id;

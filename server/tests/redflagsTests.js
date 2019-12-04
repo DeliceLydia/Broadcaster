@@ -17,7 +17,8 @@ const redFlag = {
 
 const payload ={
     id: 1,
-    email: 'claudette@gmail.com'
+    email: 'claudette@gmail.com',
+    is_admin: 'false'
 };
 const token = jwt.sign(payload, 'SECRET_KEY', { expiresIn: '24hrs' });
 describe('post a red flag', ()=> {
@@ -151,173 +152,136 @@ describe('get a specific red flag', ()=>{
     })
 })
 // update location //
-// describe('update location', ()=>{
-//     it('user should be able to update a location', (done)=>{
-//         const redFlag = {
-//             location: 'kanombe'
-//         };
-//       chai.request(app)
-//       .patch('/api/v1/red-flags/1/location')
-//       .set('authorization', token)
-//       .send(redFlag)
-//       .end((err, res)=> {
-//           expect(res.status).to.be.eql(200, 'status is wrong');
-//           expect(res.body.message).not.to.be.empty;
-//           expect(res.body.message).to.equals("updated red-flag record's location");
-//           done();
-//       })
-//     })
-//     it('user should not be able to update a location when the record does not exist', (done)=>{
-//         const redFlag = {
-//             location: 'kanombe'
-//         };
-//       chai.request(app)
-//       .patch('/api/v1/red-flags/9/location')
-//       .set('authorization', token)
-//       .send(redFlag)
-//       .end((err, res)=> {
-//           expect(res.status).to.be.eql(404, 'status is wrong');
-//           expect(res.body).to.be.an('object');
-//           done();
-//       })
-//     })
-//     it('user should not be able to update a location when token are different', (done)=>{
-//         const payload ={
-//             id: 2,
-//             firstname: 'kevine',
-//             lastname: 'rinda',
-//             email: 'kevine@gmail.com'
-//         };
-//         const token = jwt.sign(payload, 'SECRET_KEY', { expiresIn: '24hrs' });
-//         const redFlag = {
-//             location: 'kanombe'
-//         };
-//       chai.request(app)
-//       .patch('/api/v1/red-flags/1/location')
-//       .set('authorization', token)
-//       .send(redFlag)
-//       .end((err, res)=> {
-//           expect(res.status).to.be.eql(400, 'status is wrong');
-//           expect(res.body).to.be.an('object');
-//           done();
-//       })
-//     })
-//     it('user should not be able to update a location when there is a wrong data type', (done)=>{
-//         const redFlag = {
-//             location: 12
-//         };
-//       chai.request(app)
-//       .patch('/api/v1/red-flags/1/location')
-//       .set('authorization', token)
-//       .send(redFlag)
-//       .end((err, res)=> {
-//           expect(res.status).to.be.eql(400, 'status is wrong');
-//           expect(res.body).to.be.an('object');
-//           done();
-//       })
-//     })
-// })
-// describe('update comment',()=>{
-//     it('user should be able to update a comment of the red flag',(done)=>{
-//         const redFlag = {
-//             comment: 'gracias amigos'
-//         };
-//         chai.request(app)
-//         .patch('/api/v1/red-flags/1/comment')
-//         .set('authorization', token)
-//         .send(redFlag)
-//         .end((err, res)=> {
-//             expect(res.status).to.be.eql(200, 'status is wrong');
-//             expect(res.body.message).not.to.be.empty;
-//             expect(res.body.message).to.equals("updated red-flag record's comment");
-//             done();
-//         })
-//       })
-//       it('user should be not be able to update a comment when the record does not exist', (done)=>{
-//         const redFlag = {
-//             comment: 'gracias amigos'
-//         };
-//       chai.request(app)
-//       .patch('/api/v1/red-flags/9/comment')
-//       .set('authorization', token)
-//       .send(redFlag)
-//       .end((err, res)=> {
-//           expect(res.status).to.be.eql(404, 'status is wrong');
-//           expect(res.body).to.be.an('object');
-//           done();
-//          })
-//        })
-//        it('user should be not be able to update a comment when there is a wrong data type', (done)=>{
-//         const redFlag = {
-//             comment: 112
-//         };
-//       chai.request(app)
-//       .patch('/api/v1/red-flags/1/comment')
-//       .set('authorization', token)
-//       .send(redFlag)
-//       .end((err, res)=> {
-//           expect(res.status).to.be.eql(400, 'status is wrong');
-//           expect(res.body).to.be.an('object');
-//           done();
-//          })
-//        })
-//        it('user should be not be able to update a comment when there is an empty place', (done)=>{
-//         const redFlag = {
-//             comment: ''
-//         };
-//       chai.request(app)
-//       .patch('/api/v1/red-flags/1/comment')
-//       .set('authorization', token)
-//       .send(redFlag)
-//       .end((err, res)=> {
-//           expect(res.status).to.be.eql(400, 'status is wrong');
-//           expect(res.body).to.be.an('object');
-//           done();
-//          })
-//        })
-//        it('user should be not be able to update a location when token are different', (done)=>{
-//         const payload ={
-//             id: 2,
-//             firstname: 'kevine',
-//             lastname: 'rinda',
-//             email: 'kevine@gmail.com'
-//         };
-//         const token = jwt.sign(payload, 'SECRET_KEY', { expiresIn: '24hrs' });
-//         const redFlag = {
-//             comment: 'gracias amigos'
-//         };
-//       chai.request(app)
-//       .patch('/api/v1/red-flags/1/comment')
-//       .set('authorization', token)
-//       .send(redFlag)
-//       .end((err, res)=> {
-//           expect(res.status).to.be.eql(400, 'status is wrong');
-//           expect(res.body).to.be.an('object');
-//           done();
-//       })
-//     })
-//     it('user should be not be able to update a location when provided invalid token', (done)=>{
-//         const payload ={
-//             id: 1,
-//             firstname: 'kevin',
-//             lastname: 'rindaaa',
-//             email: 'kevine@gmail.com'
-//         };
-//         const token = jwt.sign(payload, 'SECRET_KEY', { expiresIn: '24hrs' });
-//         const redFlag = {
-//             comment: 'gracias amigos'
-//         };
-//       chai.request(app)
-//       .patch('/api/v1/red-flags/1/comment')
-//       .set('authorization', token)
-//       .send(redFlag)
-//       .end((err, res)=> {
-//           expect(res.status).to.be.eql(400, 'status is wrong');
-//           expect(res.body).to.be.an('object');
-//           done();
-//       })
-//     })
-//    })
+describe('update location', ()=>{
+    it('user should be able to update a location', (done)=>{
+        const redFlag = {
+            location: 'kanombe'
+        };
+      chai.request(app)
+      .patch('/api/v2/red-flags/1/location')
+      .set('authorization', token)
+      .send(redFlag)
+      .end((err, res)=> {
+          expect(res.status).to.be.eql(200, 'status is wrong');
+          expect(res.body.message).not.to.be.empty;
+          expect(res.body.message).to.equals("updated red-flag record's location");
+          done();
+      })
+    })
+    it('user should not be able to update a location when the record does not exist', (done)=>{
+        const redFlag = {
+            location: 'kanombe'
+        };
+      chai.request(app)
+      .patch('/api/v2/red-flags/9/location')
+      .set('authorization', token)
+      .send(redFlag)
+      .end((err, res)=> {
+          expect(res.status).to.be.eql(404, 'status is wrong');
+          expect(res.body).to.be.an('object');
+          done();
+      })
+    })
+    it('user should not be able to update a location when you are not authorized', (done)=>{
+        const redFlag = {
+            location: 'kanombe'
+        };
+      chai.request(app)
+      .patch('/api/v2/red-flags/1/location')
+      .send(redFlag)
+      .end((err, res)=> {
+          expect(res.status).to.be.eql(401, 'status is wrong');
+          expect(res.body).to.be.an('object');
+          done();
+      })
+    })
+    it('user should not be able to update a location when there is a wrong data type', (done)=>{
+        const redFlag = {
+            location: 12
+        };
+      chai.request(app)
+      .patch('/api/v2/red-flags/1/location')
+      .set('authorization', token)
+      .send(redFlag)
+      .end((err, res)=> {
+          expect(res.status).to.be.eql(400, 'status is wrong');
+          expect(res.body).to.be.an('object');
+          done();
+      })
+    })
+})
+describe('update comment',()=>{
+    it('user should be able to update a comment of the red flag',(done)=>{
+        const redFlag = {
+            comment: 'gracias amigos'
+        };
+        chai.request(app)
+        .patch('/api/v2/red-flags/1/comment')
+        .set('authorization', token)
+        .send(redFlag)
+        .end((err, res)=> {
+            expect(res.status).to.be.eql(200, 'status is wrong');
+            expect(res.body.message).not.to.be.empty;
+            expect(res.body.message).to.equals("updated red-flag record's comment");
+            done();
+        })
+      })
+      it('user should be not be able to update a comment when the record does not exist', (done)=>{
+        const redFlag = {
+            comment: 'gracias amigos'
+        };
+      chai.request(app)
+      .patch('/api/v2/red-flags/9/comment')
+      .set('authorization', token)
+      .send(redFlag)
+      .end((err, res)=> {
+          expect(res.status).to.be.eql(404, 'status is wrong');
+          expect(res.body).to.be.an('object');
+          done();
+         })
+       })
+       it('user should be not be able to update a comment when there is a wrong data type', (done)=>{
+        const redFlag = {
+            comment: 112
+        };
+      chai.request(app)
+      .patch('/api/v2/red-flags/1/comment')
+      .set('authorization', token)
+      .send(redFlag)
+      .end((err, res)=> {
+          expect(res.status).to.be.eql(400, 'status is wrong');
+          expect(res.body).to.be.an('object');
+          done();
+         })
+       })
+       it('user should be not be able to update a comment when there is an empty place', (done)=>{
+        const redFlag = {
+            comment: ''
+        };
+      chai.request(app)
+      .patch('/api/v2/red-flags/1/comment')
+      .set('authorization', token)
+      .send(redFlag)
+      .end((err, res)=> {
+          expect(res.status).to.be.eql(400, 'status is wrong');
+          expect(res.body).to.be.an('object');
+          done();
+         })
+       })
+       it('user should be not be able to update a comment when you are not authorized', (done)=>{
+        const redFlag = {
+            comment: 'gracias amigos'
+        };
+      chai.request(app)
+      .patch('/api/v2/red-flags/1/comment')
+      .send(redFlag)
+      .end((err, res)=> {
+          expect(res.status).to.be.eql(401, 'status is wrong');
+          expect(res.body).to.be.an('object');
+          done();
+      })
+    })
+   })
 // Delete One //
 describe('delete redFlag by ID', ()=>{
     it('user should not be able to delete a red flag he/she is not the owner', (done)=>{

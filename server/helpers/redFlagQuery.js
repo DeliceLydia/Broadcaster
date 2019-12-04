@@ -7,7 +7,9 @@ const postAflag = `INSERT INTO redflags (created_on, title, type, createdBy, loc
  VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *`;
  const getAll = `SELECT * FROM redflags`;
  const findFlagbyId = `SELECT * FROM redflags WHERE id = $1`;
- const updateRedFlag = `UPDATE redflags SET location = $1  WHERE id = $2 AND status = 'draft'`;
+ const updateLocation = `UPDATE redflags SET location = $1  WHERE id = $2 `;
+ const updateComment = `UPDATE redflags SET comment = $1  WHERE id = $2 `;
+ const changeStatus = `UPDATE redflags SET status = $1 WHERE id = $2 `;
  const deleteFlag = 'DELETE FROM redflags WHERE id = $1';
 
 
@@ -17,7 +19,9 @@ const postAflag = `INSERT INTO redflags (created_on, title, type, createdBy, loc
  sql.postAflag = postAflag;
  sql.getAll = getAll;
  sql.findFlagbyId = findFlagbyId;
- sql.updateRedFlag = updateRedFlag;
+ sql.updateLocation = updateLocation;
+ sql.updateComment = updateComment;
+ sql.changeStatus = changeStatus;
  sql.deleteFlag = deleteFlag;
 
 
