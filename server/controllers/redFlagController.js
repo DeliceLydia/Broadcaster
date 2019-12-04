@@ -77,9 +77,11 @@ static async updateComment(req, res) {
 // Status //
 static async changeStatus(req, res) {
     if(req.user.is_admin !== true){ return responseMessage.errorMessage(res, 403, 'Sorry this service is strictly for the admin')}
+    
     const flagId = req.params.id;
     const findFlag = await pool.query(sql.findFlagbyId, [flagId]);
     if(findFlag.rowCount===0){return responseMessage.errorMessage(res, 404, 'red flag of that ID is not found');}
+    
     if(findFlag.rows[0].status !== 'draft'){return responseMessage.errorMessage(res, 400, 'Sorry you are not allowed to change the status');}
     await pool.query(sql.changeStatus, [req.body.status, flagId]);
     return responseMessage.successUser(res, 200, "updated red-flag record's status", {status : req.body.status})

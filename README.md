@@ -26,14 +26,15 @@ Corruption is a huge bane to Africa’s development. African countries must deve
 
 | Ressource URL | Methods  | Description  |
 | ------- | --- | --- |
-| /api/v1/auth/signup| POST | Get the user to signup |
-| /api/v1/auth/signin | POST | Get the user to signin|
-| /api/v1/red-flags | POST | Get the user to post a redFlag record |
-| /api/v1/red-flags/:redFlagId | GET | Get the user to get all redflags records |
- /api/v1/red-flags/:redFlagId | GET |Get user to view a specific redflag by Id  |
-| /api/v1/red-flags/:redFlagId | DELETE| Get the user to DELETE his redflags records |
-| /api/v1/red-flags/:redFlagId/location| PATCH | Get the user to change the location of the redflag|
-| /api/v1/red-flags/:redFlagId/comment| PATCH | Get the user to change the comment of the redflag|
+| /api/v2/auth/signup| POST | Get the user to signup |
+| /api/v2/auth/signin | POST | Get the user to signin|
+| /api/v2/red-flags | POST | Get the user to post a redFlag record |
+| /api/v2/red-flags/:id | GET | Get the user to get all redflags records |
+ /api/v2/red-flags/:id | GET |Get user to view a specific redflag by Id  |
+| /api/v2/red-flags/:id | DELETE| Get the user to DELETE his redflags records |
+| /api/v2/red-flags/:id/location| PATCH | Get the user to change the location of the redflag|
+| /api/v2/red-flags/:id/comment| PATCH | Get the user to change the comment of the redflag|
+| /api/v2/red-flags/:id/status| PATCH | Get the admin to change the status of the redflag|
 
 For more details about endpoints [check the documentation here](https://github.com/DeliceLydia/Broadcaster
 
