@@ -1,86 +1,104 @@
-import { validateRedFlag, validateLocation, validateComment } from '../validations/redFlagValidation';
+import { validateRedFlag, validateModify} from '../validations/redFlagValidation';
 import responseMessage from '../helpers/response';
 import moment from 'moment';
-import redFlags from '../data/redFlagData';
+import pool from '../config/connect';
+import sql from '../helpers/redFlagQuery';
+
 
 
 class RedFlags {
-  static postRedFlag(req, res) {
-    const { error } = validateRedFlag.validation(req.body);
-    if (error) { return responseMessage.errorMessage(res, 400, 'you are not allowed to post check your entry'); }
+    static async postRedFlag(req, res) {
+        const { error } = validateRedFlag.validation(req.body);
+        if (error) { 
+          const message = error.details.map(item => item.message.replace(/"/g, '')).join(', ');
+          return responseMessage.errorMessage(res, 400,  message);}
+        const { title, type, location, comment, image} = req.body;
+        const created_on = moment().format('LL');
+        const createdby =  req.user.id;
+        const status = 'pending';
+        const result = await pool.query(sql.postAflag, [ created_on , title, type, createdby, location, comment, status, image]);
+        return responseMessage.successUser(res, 201, 'Created red flag record', {created_on, title, type, createdby, location, comment, status, image});
+      }
 
-    const redFlagId = redFlags.length + 1;
-    const { title, type, location, comment,status, image, video} = req.body;
-    const redFlag = { redFlagId, created_on: moment().format('LL'), title, type, comment, createdBy: req.user.email, location, status, image, video };
-    redFlags.push(redFlag);
-    return responseMessage.successWithData(res, 201, 'Created red flag record', { redFlagId });
+ // GetAll//
+static async getAll(req, res) {
+    const redflags = await pool.query(sql.getAll);
+  if (!redflags.rows[0]) { return responseMessage.errorMessage(res, 404, 'no red flags found'); }
+  else { return responseMessage.successUser(res, 200, redflags.rows); }
+}
+
+// GetOne//
+static async getOne(req, res) {
+    const id = req.params.id;
+    const {rows} = await pool.query(sql.findFlagbyId, [id]);
+    if (!rows.length > 0) { return responseMessage.errorMessage(res, 404, 'red flag not found') }
+    else { return responseMessage.successUser(res, 200, rows[0]); }
   }
 
-  // GetAll//
-  static getAll(req, res) {
-    if (!redFlags) { return responseMessage.errorMessage(res, 404, 'no red flags found'); }
-    else { return responseMessage.successUser(res, 200, redFlags); }
-  }
-
-  // GetOne//
-  static getOne(req, res) {
-    const redFlagId = redFlags.find(h => h.redFlagId === parseInt(req.params.redFlagId));
-    if (!redFlagId) { return responseMessage.errorMessage(res, 404, 'red flag not found') }
-    else { return responseMessage.successUser(res, 200, redFlagId); }
-  }
-
-  // Update Location //
-  static updateLocation(req, res) {
-    const { error } = validateLocation.validation(req.body);
-    if (error) { return responseMessage.errorMessage(res, 400,'you are not allowed to modify check your entry'); }
-    const Flag = redFlags.find(i => i.redFlagId === parseInt(req.params.redFlagId));
-
-    if (!Flag) { return responseMessage.errorMessage(res, 404, 'red flag not found') }
-
-    else if (Flag.status !== 'draft') { return responseMessage.errorMessage(res, 400, 'you are not allowed to change the location') }
-
-    else if (Flag.createdBy !== req.user.email) {
-      return responseMessage.errorMessage(res, 400, 'this record does not belong to you')
+ // Update Location //
+static async updateLocation(req, res) {
+    const { error } = validateModify.validation(req.body);
+    if (error) {  
+    const message = error.details.map(item => item.message.replace(/"/g, '')).join(', ');
+    return responseMessage.errorMessage(res, 400,  message);} 
+    
+    const flagId = req.params.id;
+    const findFlag = await pool.query(sql.findFlagbyId, [flagId]);
+    if(findFlag.rowCount===0){return responseMessage.errorMessage(res, 404, 'red flag of that ID is not found');}
+    
+    if(findFlag.rows[0].status !== 'pending'){return responseMessage.errorMessage(res, 400, 'Sorry you are not allowed to change the location');}
+    
+    if(findFlag.rows[0].createdby !== req.user.id) {return responseMessage.errorMessage(res, 400, 'you are not allowed to update this redflag location you are not the owner!');}
+    await pool.query(sql.updateLocation, [req.body.location, flagId]);
+    const{id, title, type, createdby} = findFlag.rows[0];
+    return responseMessage.successUser(res, 200, "updated red-flag record's location", {
+        id, title, type, createdby,location: req.body.location})
     }
-    else{
-      Flag.location = req.body.location;
-      return responseMessage.successWithData(res, 200, "updated red-flag record's location", 
-      { redFlagId: Flag.redFlagId , title: Flag.title, type: Flag.type, comment: Flag.comment, 
-        createdBy: req.user.email, location: Flag.location, status: Flag.status})
+// Update comment //
+static async updateComment(req, res) {
+    const { error } = validateModify.validation(req.body);
+    if (error) {  
+    const message = error.details.map(item => item.message.replace(/"/g, '')).join(', ');
+    return responseMessage.errorMessage(res, 400,  message);} 
+    
+    const flagId = req.params.id;
+    const findFlag = await pool.query(sql.findFlagbyId, [flagId]);
+    if(findFlag.rowCount===0){ return responseMessage.errorMessage(res, 404, 'red flag of that ID is not found');}
+    
+    if(findFlag.rows[0].status !== 'pending'){return responseMessage.errorMessage(res, 400, 'Sorry you are not allowed to change the location');}
+    
+    if(findFlag.rows[0].createdby !== req.user.id) {return responseMessage.errorMessage(res, 400, 'you are not allowed to update this redflag comment you are not the owner!');}
+    await pool.query(sql.updateComment, [req.body.comment, flagId]);
+    const{id, title, type, createdby, location} = findFlag.rows[0];
+    return responseMessage.successUser(res, 200, "updated red-flag record's comment", {
+        id, title, type, createdby, location, comment: req.body.comment})
     }
- }
 
-//  update comment //
-  static updateComment(req, res) {
-    const { error } = validateComment.validation(req.body);
-    if (error) { return responseMessage.errorMessage(res, 400, 'you are not allowed to update check your entry'); }
-    const Flag = redFlags.find(i => i.redFlagId === parseInt(req.params.redFlagId));
+// Status //
+static async changeStatus(req, res) {
+    if(req.user.is_admin !== true){ return responseMessage.errorMessage(res, 403, 'Sorry this service is strictly for the admin')}
+    
+    const flagId = req.params.id;
+    const findFlag = await pool.query(sql.findFlagbyId, [flagId]);
+    if(findFlag.rowCount===0){return responseMessage.errorMessage(res, 404, 'red flag of that ID is not found');}
+    
+    if(findFlag.rows[0].status !== 'pending'){return responseMessage.errorMessage(res, 400, 'Sorry you are not allowed to change the status');}
+    await pool.query(sql.changeStatus, [req.body.status, flagId]);
+    return responseMessage.successUser(res, 200, "updated red-flag record's status", {status : req.body.status})
 
-    if (!Flag) { return responseMessage.errorMessage(res, 404, 'red flag not found') }
-
-    else if (Flag.createdBy !== req.user.email) {
-      return responseMessage.errorMessage(res, 400, 'this record does not belong to you')
-    }
-    else {
-      Flag.comment = req.body.comment;
-      return responseMessage.successWithData(res, 200, "updated red-flag record's comment", { redFlagId: Flag.redFlagId,title: Flag.title, type: Flag.type, comment: Flag.comment, 
-        createdBy: req.user.email, location: Flag.location, status: Flag.status})
-    }
-  }
-
-  // Delete One //
+}
   
-static deleteRedflag(req, res) {
-    const deleteOne = redFlags.find(d => d.redFlagId === parseInt(req.params.redFlagId));
-    if (!deleteOne) { return responseMessage.errorMessage(res, 404, 'red flag with that ID is not found') }
-    else if (deleteOne.createdBy !== req.user.email) {
-      return responseMessage.errorMessage(res, 400, 'this record does not belong to you')}
-    else if (deleteOne) {
-      const index = redFlags.indexOf(deleteOne);
-      redFlags.splice(index, 1);
-      return responseMessage.successWithNoData(res, 200, 'red-flag record has been deleted')
+// Delete One //
+  
+static async deleteRedflag(req, res) {
+    const flagid = req.params.id;
+    const findFlag = await pool.query(sql.findFlagbyId, [flagid]);
+    if (findFlag.rowCount===0) { return responseMessage.errorMessage(res, 404, 'red flag with that ID is not found'); }
+    if (findFlag.rows[0].createdby !== req.user.id) {
+      return responseMessage.errorMessage(res, 400, 'you are not allowed to delete this record!')}
+      await pool.query(sql.deleteFlag, [flagid]);
+     return responseMessage.successWithNoData(res, 200, 'red-flag record has been deleted')
     }
   }
-  }
   
-export default RedFlags;
+ export default RedFlags;

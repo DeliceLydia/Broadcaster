@@ -6,9 +6,10 @@ const validateSignup = {
             firstname: joi.string().trim().required(),
             lastname: joi.string().trim().required(),
             email: joi.string().email({ minDomainAtoms: 2 }).trim().required(),
-            phoneNumber: joi.string().trim().required(),
-            username: joi.string().trim().required(),
-            password: joi.string().min(6).max(10).required(),
+            phoneNumber: joi.number().required(),
+            username: joi.string().min(4).max(6).trim().required(),
+            password: joi.string().regex(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/).trim().required(),
+            is_admin: joi.boolean().optional()
         };
         return joi.validate(signup, schema);
     }

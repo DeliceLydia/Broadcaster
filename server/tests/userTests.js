@@ -8,12 +8,12 @@ chai.use(chaiHttp);
 const {expect} = chai;
 
 const user = {
-    firstname : 'cycy',
-    lastname: 'nshuti',
-    email: 'cycy@gmail.com',
-    phoneNumber: '0785022617',
-    username: 'cycy',
-    password: '123456'
+    firstname : "uwera",
+    lastname : "Claudette",
+    email : "claudette@gmail.com",
+    phoneNumber: "0786846798",
+    username: "coco",
+    password: "Lydie1@"
 };
 
 // signup //
@@ -31,7 +31,7 @@ describe('signup', ()=> {
     })
     it('user should be able to create an account', (done)=>{
         chai.request(app)
-        .post('/api/v1/auth/signup')
+        .post('/api/v2/auth/signup')
         .send(user)
         .end((err, res)=>{
             expect(res.status).to.be.eql(201);
@@ -43,15 +43,15 @@ describe('signup', ()=> {
     })
     it('user should not be able to create an account when using existing email', (done)=>{
         const newUser = {
-            firstname : 'cycy',
-            lastname: 'nshuti',
-            email: 'nshuti@gmail.com',
-            phoneNumber: '0785022617',
-            username: 'cycy',
-            password: '123456'
+            firstname : "uwera",
+            lastname : "Claudette",
+            email : "claudette@gmail.com",
+            phoneNumber: "0786846798",
+            username: "coco",
+            password: "Lydie1@"
         };
         chai.request(app)
-        .post('/api/v1/auth/signup')
+        .post('/api/v2/auth/signup')
         .send(newUser)
         .end((err, res)=>{
             expect(res.status).to.be.eql(400);  
@@ -61,15 +61,15 @@ describe('signup', ()=> {
     })
     it('user should not be able to create an account when using existing username', (done)=>{
         const newUser = {
-            firstname : 'cycy',
-            lastname: 'nshuti',
-            email: 'cycy@gmail.com',
-            phoneNumber: '0785022617',
-            username: 'cycy',
-            password: '123456'
+            firstname : "uwera",
+            lastname : "Claudette",
+            email : "claudette@gmail.com",
+            phoneNumber: "0786846798",
+            username: "coco",
+            password: "Lydie1@"
         };
         chai.request(app)
-        .post('/api/v1/auth/signup')
+        .post('/api/v2/auth/signup')
         .send(newUser)
         .end((err, res)=>{
             expect(res.status).to.be.eql(400);  
@@ -79,15 +79,15 @@ describe('signup', ()=> {
     })
     it('user should not be able to post when there is an empty place', (done)=>{
         const newUser = {
-            firstname : 'cycy',
-            lastname: 'nshuti',
-            email: 'nshuti@gmail.com',
-            phoneNumber: '0785022617',
+            firstname : "uwera",
+            lastname : "Claudette",
+            email : "claudette@gmail.com",
+            phoneNumber: "0786846798",
             username: "",
-            password: '123456'
+            password: "Lydie1@"
         };
         chai.request(app)
-        .post('/api/v1/auth/signup')
+        .post('/api/v2/auth/signup')
         .send(newUser)
         .end((err, res)=>{
             expect(res.status).to.be.eql(400);  
@@ -98,14 +98,14 @@ describe('signup', ()=> {
     it('user should not be able to post when there is an incorrect data type', (done)=>{
         const newUser = {
             firstname : 12,
-            lastname: 'nshuti',
-            email: 'nshuti@gmail.com',
-            phoneNumber: '0785022617',
-            username: "cycy",
-            password: '123456'
+            lastname : "Claudette",
+            email : "claudette@gmail.com",
+            phoneNumber: "0786846798",
+            username: "coco",
+            password: "Lydie1@"
         };
         chai.request(app)
-        .post('/api/v1/auth/signup')
+        .post('/api/v2/auth/signup')
         .send(newUser)
         .end((err, res)=>{
             expect(res.status).to.be.eql(400);  
@@ -118,11 +118,11 @@ describe('signup', ()=> {
 describe('signin', ()=>{
     it('user should be able to signin', (done)=>{
      const returningUser = {
-        email: 'cycy@gmail.com',
-        password: '123456'
+        email: "claudette@gmail.com",
+        password: 'Lydie1@'
      };
      chai.request(app)
-     .post('/api/v1/auth/signin')
+     .post('/api/v2/auth/signin')
      .send(returningUser)
      .end((err, res)=>{
         expect(res.status).to.be.eql(200);
@@ -135,10 +135,10 @@ describe('signin', ()=>{
     it('user should not be able to signin when provided unexisted email',(done)=>{
         const returningUser = {
             email: 'cynthia@gmail.com',
-            password: '123456'
+            password: 'Lydie1@'
          };
          chai.request(app)
-     .post('/api/v1/auth/signin')
+     .post('/api/v2/auth/signin')
      .send(returningUser)
      .end((err, res)=>{
         expect(res.status).to.be.eql(400);
@@ -152,7 +152,7 @@ it('user should not be able to signin when provided wrong password',(done)=>{
         password: '12345687'
      };
      chai.request(app)
- .post('/api/v1/auth/signin')
+ .post('/api/v2/auth/signin')
  .send(returningUser)
  .end((err, res)=>{
     expect(res.status).to.be.eql(400);
@@ -163,10 +163,10 @@ it('user should not be able to signin when provided wrong password',(done)=>{
   it('user should not be able to signin when provided wrong data type',(done)=>{
     const returningUser = {
         email: 123,
-        password: '12345687'
+        password: 'Lydie1@'
      };
      chai.request(app)
- .post('/api/v1/auth/signin')
+ .post('/api/v2/auth/signin')
  .send(returningUser)
  .end((err, res)=>{
     expect(res.status).to.be.eql(400);
