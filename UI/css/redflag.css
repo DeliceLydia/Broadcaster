@@ -18,12 +18,6 @@ body {
     text-decoration: none;
     font-size: 1.3em;
   }
-  .nav-items ul li a:hover{
-      background: none;
-      transition-duration: 0.05s;
-      cursor: pointer;
-      background-color: #7451eb;
-  }
   .nav-items ul {
     list-style: none;
   }

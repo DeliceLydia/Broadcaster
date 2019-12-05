@@ -4,7 +4,7 @@
   "description": "Broadcaster enables every citizen to bring any form of corruption",
   "main": "server.js",
   "scripts": {
-    "dev": "NODE_ENV=development npm run drop &&  npm run tables && nodemon --exec babel-node ./server/server.js",
+    "dev": "nodemon --exec babel-node ./server/server.js",
     "start": "npm run drop && npm run tables && node --require @babel/register ./server/server.js",
     "tables": "node --require @babel/register ./server/database/db  createTables",
     "drop": "node --require @babel/register ./server/database/db dropTables",
@@ -45,7 +45,6 @@
     "@typescript-eslint/parser": "^2.7.0",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
-    "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "mocha": "^6.2.2",
