@@ -12,7 +12,7 @@ let pool = {};
  });
  if (process.env.NODE_ENV === 'testing'){
     pool = new Pool({
-       connectionString: process.env.TEST_DATABASE
+       connectionString: process.env.DATABASE_URL
     });
     pool.on('connect', ()=> {
        console.log('connected to the tests db');
@@ -20,7 +20,7 @@ let pool = {};
 }
 if (process.env.NODE_ENV === 'production'){
     pool = new Pool({
-       connectionString: process.env.DB_URL
+       connectionString: process.env.DATABASE_URL
     });
     pool.on('connect', ()=> {
        console.log('connected to the production db');
