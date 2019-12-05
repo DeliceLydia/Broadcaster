@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "NODE_ENV=development npm run drop &&  npm run tables && nodemon --exec babel-node ./server/server.js",
-    "start": "npm run tables && node --require @babel/register ./server/server.js",
+    "start": "npm run drop && npm run tables && node --require @babel/register ./server/server.js",
     "tables": "node --require @babel/register ./server/database/db  createTables",
     "drop": "node --require @babel/register ./server/database/db dropTables",
     "test": "NODE_ENV=testing npm run drop && npm run tables &&  nyc --reporter=html --reporter=text mocha --timeout 5000 --require @babel/polyfill --require @babel/register server/tests/* --exit",
