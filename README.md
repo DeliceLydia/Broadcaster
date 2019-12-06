@@ -36,7 +36,7 @@ Corruption is a huge bane to Africa’s development. African countries must deve
 | /api/v2/red-flags/:id/comment| PATCH | Get the user to change the comment of the redflag|
 | /api/v2/red-flags/:id/status| PATCH | Get the admin to change the status of the redflag|
 
-For more details about endpoints [check the documentation here](https://github.com/DeliceLydia/Broadcaster
+For more details about endpoints [check the documentation here](https://documenter.getpostman.com/view/6368898/SWE3eLDA?version=latest)
 
 ## BUILT WITH
 
